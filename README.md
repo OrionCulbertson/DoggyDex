@@ -22,7 +22,7 @@
 | Anthony Borges      	| aborges1@mail.sfsu.edu        | anthonyBorges98 |
 | Orion Culbertson      | oculbertson@mail.sfsu.edu     | orionculbertson |
 | Miguel Galvan      	| mgalvanalvarado@mail.ssfu.edu | mgacoder        |
-| Drew Grayson      	| gdew1@mail.sfsu.edu      		| Dewtopia        |
+| Grayson Dew      	| gdew1@mail.sfsu.edu      		| Dewtopia        |
 | Rigo Perez      		| rperez14@mail.sfsu.edu   		| Rig06           |
 | Kristopher Phillips   | kphillips1@mail.sfsu.edu 		| krispy1994      |
 
