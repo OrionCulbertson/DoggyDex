@@ -19,7 +19,6 @@
 
 | Student Name 			| Student Email            		| GitHub Username |
 |    :---:     			|     :---:                		|     :---:       |
-| Anthony Borges      	| aborges1@mail.sfsu.edu        | anthonyBorges98 |
 | Orion Culbertson      | oculbertson@mail.sfsu.edu     | orionculbertson |
 | Miguel Galvan      	| mgalvanalvarado@mail.ssfu.edu | mgacoder        |
 | Grayson Dew      	| gdew1@mail.sfsu.edu      		| Dewtopia        |
