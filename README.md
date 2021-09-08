@@ -20,7 +20,7 @@
 | Student Name 			| Student Email            		| GitHub Username |
 |    :---:     			|     :---:                		|     :---:       |
 | Orion Culbertson      | oculbertson@mail.sfsu.edu     | orionculbertson |
-| Miguel Galvan      	| mgalvanalvarado@mail.ssfu.edu | mgacoder        |
+| Miguel Galvan      	| mgalvanalvarado@mail.sfsu.edu | mgacoder        |
 | Grayson Dew      	| gdew1@mail.sfsu.edu      		| Dewtopia        |
 | Rigo Perez      		| rperez14@mail.sfsu.edu   		| Rig06           |
 | Kristopher Phillips   | kphillips1@mail.sfsu.edu 		| krispy1994      |
