@@ -1,0 +1,15 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-doggydex-dev-184301-authRole",
+      "UnauthRoleArn": "arn:aws:iam::466972122955:role/amplify-doggydex-dev-184301-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::466972122955:role/amplify-doggydex-dev-184301-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-doggydex-dev-184301-deployment",
+      "UnauthRoleName": "amplify-doggydex-dev-184301-unauthRole",
+      "StackName": "amplify-doggydex-dev-184301",
+      "StackId": "arn:aws:cloudformation:us-east-2:466972122955:stack/amplify-doggydex-dev-184301/66fef640-32d9-11ec-b7d7-0a5670167d24",
+      "AmplifyAppId": "d1ge3kcnjd3dnw"
+    }
+  }
+}
