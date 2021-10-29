@@ -1,0 +1,161 @@
+
+.nav-var, .navbarBrand {
+  background-color: #ff8ae2;
+}
+
+.form-container {
+  background-color: rgba(0,0,0,.05);
+  padding: 50px;
+  min-height: 100vh;
+  color:  #050405;
+  min-height: 25vh;
+
+}
+
+.top-box {
+  background-color: #0e2e4e;
+  min-height: 100vh;
+  color:  #cc29a3;
+  min-height: 25vh;
+
+}
+.homePageBody{
+  background-color: #f083c8;
+  min-height: 100vh;
+  font-family:'Roboto',sans-serif;
+  color: rgb(0, 0, 0); 
+
+}
+.spacer{
+  padding: 60px;
+  background-color: #f083c8;
+  min-height: 100vh;
+  font-family:'Roboto',sans-serif;
+  color: rgb(0, 0, 0); 
+}
+.RegisterNewUserForm,  .About, .UpdateDogBreedInfo, .spacer{
+  background-color: #f083c8;
+  min-height: 100vh;
+  font-family:'Roboto',sans-serif;
+  color: rgb(0, 0, 0); 
+}
+
+.CreateNewDogBreed{
+  background-color: #f083c8;
+  min-height: 100vh;
+  font-family:'Roboto',sans-serif;
+  color: rgb(0, 0, 0);
+}
+
+
+
+.ShowUserDetails {
+  background-color: #0e2e4e;
+  min-height: 100vh;
+  color: white;
+}
+
+.UpdateUserInfo {
+  background-color: #6e9cca;
+  min-height: 100vh;
+  color: white;
+}
+
+.ShowDogBreedList, .ShowUserList {
+  background-color: #f083c8;
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  min-width: 100px;
+  color: white;
+}
+
+
+/* UserList Styles */
+.list {
+  display: grid;
+  margin: 20px 0 50px 0;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1fr;
+  grid-gap: 2em;
+}
+
+.card-container {
+
+  background-color: #131736;
+  width: 150px;
+  border: 1px solid rgb(243, 236, 236);
+  margin: 0 auto;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.desc {
+  height: 130px;
+  padding: 10px;
+}
+
+.desc h2 {
+  font-size: 1em;
+  font-weight: 400;
+}
+
+.desc h3, p {
+  font-weight: 300;
+}
+
+.desc h3 {
+  color: #e0edff;
+  font-size: 1em;
+  padding: 10px 0 10px 0;
+}
+
+hr.new1 {
+  border-top: 1px solid rgb(24, 1, 1);
+}
+
+.btn{
+  display: inline-block;
+  padding: 0.2em 1em;
+  margin:0 0.2em 0.2em 0;
+  border: 0.02em solid #747564;;
+  border-radius:1em;
+  box-sizing: border-box;
+ text-decoration:none;
+ font-family:'Roboto',sans-serif;
+ font-weight:300;
+ color:#000000;
+ background-color:#2bc6ff;
+ text-align:center;
+ transition: all 0.2s;
+ font-size: 12px;
+  }
+
+.btn:hover{
+  background-color:#4af3ff;
+}
+#unit{
+padding: 0.2em ;
+background-color: rgba(0,0,0,.08);
+font-family: 'Roboto',sans-serif;
+font-size: 15px;
+}
+
+
+.Home{
+  background-color:#d870be;
+}
+
+
+.link {
+  display: inline-block;
+  padding: 0.2em;
+  margin: 0.2em;
+  outline: none;
+  text-decoration: none;
+  width: 19.5%;
+  text-align: center;
+  font-family: 'Roboto',sans-serif;
+  color:#000000;
+  background: yellow;
+}

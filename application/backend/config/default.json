@@ -1,0 +1,4 @@
+{
+  "mongoURI":
+"mongodb+srv://doggydex:doggydex2021@team02doggydex.hvme5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+}
