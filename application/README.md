@@ -4,7 +4,7 @@
 -> Back end directory commands:
 
 1. Navigate to back-end folder.
-Open terminal and run:
+Open terminla and run:
 
 $ npm install
 $ npm i config
