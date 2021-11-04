@@ -14,9 +14,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var amplifyContainerCss = "amplify-container{display:-ms-flexbox;display:flex;-ms-flex-align:center;align-items:center;-ms-flex-pack:center;justify-content:center;height:100vh}";
 
-var AmplifyContainer =
-/** @class */
-function () {
+var AmplifyContainer = function () {
   function AmplifyContainer(hostRef) {
     Object(_index_83f2275b_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
   }

@@ -14,9 +14,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var amplifyLinkCss = ":host{--link-color:var(--amplify-primary-color);--link-hover:var(--amplify-primary-tint);--link-active:var(--amplify-primary-shade)}.link{color:var(--link-color);cursor:pointer}.link:link{color:var(--link-color);text-decoration:none}.link:hover{color:var(--link-hover);text-decoration:underline}.link:active{color:var(--link-active);text-decoration:underline}";
 
-var AmplifyLink =
-/** @class */
-function () {
+var AmplifyLink = function () {
   function AmplifyLink(hostRef) {
     Object(_index_83f2275b_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
     /** The link role is used to identify an element that creates a hyperlink to a resource that is in the application or external */

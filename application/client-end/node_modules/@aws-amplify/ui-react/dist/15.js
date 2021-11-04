@@ -14,9 +14,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var amplifyCheckboxCss = ":host{--font-family:var(--amplify-font-family)}.checkbox{margin-bottom:22px;display:block;width:100%;padding:16px;font-size:var(--amplify-text-sm);font-family:var(--font-family)}.checkbox input{margin-right:12px}";
 
-var AmplifyCheckbox =
-/** @class */
-function () {
+var AmplifyCheckbox = function () {
   function AmplifyCheckbox(hostRef) {
     var _this = this;
 

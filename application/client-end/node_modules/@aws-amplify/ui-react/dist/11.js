@@ -13,9 +13,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _index_83f2275b_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index-83f2275b.js */ "../amplify-ui-components/dist/esm-es5/index-83f2275b.js");
 
 
-var AmplifyAuthContainer =
-/** @class */
-function () {
+var AmplifyAuthContainer = function () {
   function AmplifyAuthContainer(hostRef) {
     Object(_index_83f2275b_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
   }

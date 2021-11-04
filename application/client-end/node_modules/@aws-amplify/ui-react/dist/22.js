@@ -16,9 +16,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var amplifyIconCss = ".sc-amplify-icon-h{--width:auto;--height:auto;--icon-fill-color:var(--amplify-white)}svg.sc-amplify-icon{fill:var(--icon-fill-color);width:var(--width);height:var(--height)}";
 
-var AmplifyIcon =
-/** @class */
-function () {
+var AmplifyIcon = function () {
   function AmplifyIcon(hostRef) {
     Object(_index_83f2275b_js__WEBPACK_IMPORTED_MODULE_0__["r"])(this, hostRef);
   }
