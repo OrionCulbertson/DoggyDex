@@ -6,6 +6,20 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const config = require("../../config/auth.config");// Keeps secret key
 
+// function getHashedPassword(password){
+   
+//   const saltRounds = 10; 
+//   const hashedPassword = new Promise((resolve, reject) => {
+//     bcrypt.genSalt(saltRounds, function(err, salt){
+//       bcrypt.hash(password, salt, function(err, hash) {
+//         if(err) reject(err)
+//         resolve(hash)
+//       });
+//     });
+//   });
+//   return hashedPassword;
+// } in case we implement update user function will be necc. 
+
 
 
 // Load Basic_User model
