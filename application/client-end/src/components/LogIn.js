@@ -1,17 +1,11 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import LoginForm from "./LoginForm"
 
-const Login = () => {
+const LogIn = () => {
     return (
-        <div style={{
-           width: `100vw`,
-           display: `flex`,
-           justifyContent: `center`,
-        }}>
-            <h4>Login Page!</h4>
-            <Link to="/">Go Back to home</Link>
+        <div className="contentContainer">
+            <LoginForm />
         </div>
-    )
+    );
 }
 
-export default Login;
+export default LogIn;
