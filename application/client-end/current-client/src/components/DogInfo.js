@@ -3,10 +3,6 @@ import axios from 'axios'
 //https://dev.to/m_adams1909/data-fetching-with-axios-in-react-made-simple-2jei
 
 const DogInfo = ({dog_id, dogObject}) => {
-    
-    
-
-    
     return (
         <div>
             <h1>Dog:</h1>
@@ -16,4 +12,4 @@ const DogInfo = ({dog_id, dogObject}) => {
     )
 }
 
-export default DogInfo
+export default DogInfo;
