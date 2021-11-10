@@ -10,6 +10,7 @@ const UploadDog = () => {
     const [dogObject, setDogObject] = useState({});
 
     const getDogInfo = (dog_id) => {
+        //TODO: DEFINE IT
         // axios.get(`/dog-info/${dog_id}`)
         //     .then( (response) => {
         //         console.log(response.data);
