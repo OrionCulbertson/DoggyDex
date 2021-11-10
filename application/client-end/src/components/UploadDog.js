@@ -6,8 +6,8 @@ import DogInfo from './DogInfo';
 
 const UploadDog = () => {
     const [isDogUploaded, setIsDogUploaded] = useState(false);
-    const [dogUploaded, setDogUploaded] = useState({});
-    const [dogObject, setDogObject] = useState({});
+    const [dogUploaded, setDogUploaded] = useState({}); //Contains Dog ID, Confidence Score
+    const [dogObject, setDogObject] = useState({}); //Contains Entire Dog Object
 
     const getDogInfo = (dog_id) => {
         //TODO: DEFINE IT
@@ -25,7 +25,7 @@ const UploadDog = () => {
     return (
         <>
             {isDogUploaded ?
-                <DogInfo dogObject={dogObject} />
+                <DogInfo dogUploaded={dogUploaded} dogObject={dogObject} setIsDogUploaded={setIsDogUploaded} />
                 :
                 <DogSubmission setDogUploaded={setDogUploaded} setIsDogUploaded={setIsDogUploaded} getDogInfo={getDogInfo} />
             }

@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store";
-import { About, Menu, Home, UserProfile, CreateAccount, Login } from "./components"
+import { About, Menu, Home, UserProfile, CreateAccount, Login, DogFoundCard } from "./components"
+// import DogFoundCard from "./components/DogFoundCard";
 
 function App() {
   return (
