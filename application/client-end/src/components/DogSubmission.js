@@ -35,7 +35,8 @@ const DogSubmission = ({setDogUploaded, setIsDogUploaded, getDogInfo}) => {
             // // setDogUploaded({dog_id: 10, confidenceScore: 90}); //Testing information
             getDogInfo(dog_id); //Loads dog object based off dog breed
             setIsDogUploaded(true); //Updates the page
-
+            setFile({}); //Reset File Upload info
+            setFileName(""); //Reset File Name info
             //TODO: if user is logged in, store in user's profile
             
         } catch (err) {
