@@ -8,6 +8,7 @@ const DogSubmission = ({setDogUploaded, setIsDogUploaded, getDogInfo}) => {
     const [file, setFile] = useState("");
     const [fileName, setFileName] = useState("Choose File");
     const [uploadedFile, setUploadedFile] = useState({});
+    const [message, setMessage] = useState("");
 
     const onChange = e => {
         //TO-DO: we need to filter out non-image files
@@ -29,6 +30,7 @@ const DogSubmission = ({setDogUploaded, setIsDogUploaded, getDogInfo}) => {
 
             const { fileName, filePath, dog_id, confidenceScore} = res.data;
             setUploadedFile({ fileName, filePath, dog_id }); //May not need this
+            setMessage("File Uploaded");
             setDogUploaded({dog_id, confidenceScore});
             // setDogUploaded({dog_id: 10, confidenceScore: 90}); //Testing information
             getDogInfo(dog_id); //Loads dog object based off dog breed
