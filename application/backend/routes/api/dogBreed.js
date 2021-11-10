@@ -21,10 +21,12 @@ router.get('/', (req, res) => {
 // @description Get single dogbreed by id
 
 router.get('/:id', (req, res) => {
-  Dog.findById(req.params.id)
+  Dog.find({$or: [
+    {dogbreed: req.params.id},
+    {breedid: req.params.id}
+  ]})
   .then(dog => res.json(dog))
-  .catch(err => res.status(404).json({ nouserfound: '***No dog found***' }));
-
+  .catch(err => res.status(404).json({nodogbreedfound: '*** No Dog Found ***'}));
 });
 
 // @route GET api/dogbreed
