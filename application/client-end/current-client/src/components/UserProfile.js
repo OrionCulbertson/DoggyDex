@@ -21,6 +21,7 @@ const UserProfile = () => {
             {isLoggedIn ?
                 null
                 :
+                
                 <>
                     <Logo />
                     <div className="contentContainer">

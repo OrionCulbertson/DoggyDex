@@ -43,6 +43,7 @@ const Menu = () => {
                     {/* <Button contents={<Link to=""></Link>} onClick={toggleMenu} styleClass="navButton" />
                     <Button contents={<Link to=""></Link>} onClick={toggleMenu} styleClass="navButton" />
                      */}
+                     
                     {menuOptions.map((option, index) => (
                         <Link to={menuLinks[option]} className="menuLink" onClick={toggleMenu}>
                             <Button
