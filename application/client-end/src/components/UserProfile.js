@@ -7,23 +7,23 @@ const UserProfile = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const loginOptions = [
-        "Log In",
+        "Login",
         "Create Account",
         "Continue as Guest",
     ];
     const loginLinks = {
-        "Log In": "/log-in",
+        "Login": "/log-in",
         "Create Account": "/create-account",
         "Continue as Guest": "/",
     };
 
     return (
         <>
+            <Logo />
             {isLoggedIn ?
                 null
                 :
                 <>
-                    <Logo />
                     <div className="contentContainer">
                         {loginOptions.map((option, index) => (
                             <div>
