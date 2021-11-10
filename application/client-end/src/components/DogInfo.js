@@ -3,14 +3,11 @@ import axios from 'axios'
 import { Button, DogFoundCard } from '.';
 import { FaArrowLeft } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-// import DogFoundCard from './DogFoundCard';
-// import { DogFoundCard } from 'DogFoundCard.js';
 //https://dev.to/m_adams1909/data-fetching-with-axios-in-react-made-simple-2jei
 
 
 const DogInfo = ({dogUploaded, dogObject, setIsDogUploaded }) => {
     const onClick = () => {
-        console.log("tryin")
         setIsDogUploaded(false);
     }
 

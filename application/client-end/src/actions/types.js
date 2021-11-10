@@ -8,3 +8,5 @@ export const SET_MESSAGE = "SET_MESSAGE";
 export const CLEAR_MESSAGE = "CLEAR_MESSAGE";
 
 export const SET_LEARNING_MODE = "SET_LEARNING_MODE";
+
+export const IS_DOG_UPLOADED = "IS_DOG_UPLOADED";
