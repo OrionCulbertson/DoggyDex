@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Logo from './Logo';
 
 const UserProfile = () => {
+    //Change to check global user state
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const loginOptions = [

@@ -1,11 +1,10 @@
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { Provider } from "react-redux";
+import { Provider, useSelector } from "react-redux";
 import store from "./store";
-import { About, Menu, Home, UserProfile, CreateAccount, Login } from "./components"
+import { About, Menu, Home, UserProfile, CreateAccount, Login, DogFoundCard } from "./components"
 
 function App() {
   return (
-    <Provider store={store}>
       <Router>
         <div>
           <Menu />
@@ -19,7 +18,6 @@ function App() {
           </footer>
         </div>
       </Router>
-    </Provider>
   );
 }
 
