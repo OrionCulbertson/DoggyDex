@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import axios from "axios"
-import Message from './Message';
 import Button from './Button';
 import DogSubmission from './DogSubmission';
 import DogInfo from './DogInfo';

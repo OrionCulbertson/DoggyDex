@@ -1,12 +1,7 @@
-import Logo from "./components/Logo";
-import UploadDog from "./components/UploadDog";
-import Menu from "./components/Menu";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import About from "./components/About";
-import UserProfile from "./components/UserProfile";
 import { Provider } from "react-redux";
 import store from "./store";
-import Home from "./components/Home";
+import {About, Menu, Home, UserProfile} from "./components"
 
 function App() {
   return (
