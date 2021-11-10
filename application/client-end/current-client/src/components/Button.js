@@ -1,5 +1,3 @@
-
-
 const Button = ({contents, onClick, styleClass, color, type}) => {
     return (
         <button 
@@ -13,4 +11,4 @@ const Button = ({contents, onClick, styleClass, color, type}) => {
     )
 }
 
-export default Button
+export default Button;
