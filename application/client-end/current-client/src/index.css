@@ -1,145 +1,156 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 .contentContainer {
-  width: 300px;
-  padding: 10px;
-  /* height: auto; */
-  background: #F9BEC7;
-  margin: auto;
-  /* margin-top: 70%; */
-  border-radius: 25px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  
+    width: 300px;
+    padding: 10px;
+    /* height: auto; */
+    background: #F9BEC7;
+    margin: auto;
+    /* margin-top: 70%; */
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 body {
-  margin: 0;
-  background: #FF99AC;
-  font-family: 'Rubik', sans-serif;
+    margin: 0;
+    background: #FF99AC;
+    font-family: 'Rubik', sans-serif;
 }
 
 .stdButton {
-  background: #FF7096;
-  text-align: center;
-  padding: 10px;
-  border-radius: 25px;
-  width: 80%;
-  display: block;
-  margin: auto;
-  border: none;
-  text-decoration: none;
-  /* box-shadow: 0px 5px #B74865; */
+    background: #FF7096;
+    text-align: center;
+    padding: 10px;
+    border-radius: 25px;
+    width: 80%;
+    display: block;
+    margin: auto;
+    border: none;
+    text-decoration: none;
+    box-shadow: 0px 5px #B74865;
 }
 
 .uploadDogButton {
-  /* border: 1px solid #ccc; */
-  display: block;
-  padding: 6px 12px;
-  cursor: pointer;
-  margin: auto;
-  text-align: center;
-  background: #FAE0E4;
-  margin-bottom: 10px;
+    /* border: 1px solid #ccc; */
+    display: block;
+    padding: 6px 12px;
+    cursor: pointer;
+    margin: auto;
+    text-align: center;
+    background: #FAE0E4;
+    margin-bottom: 10px;
 }
 
 input[type="file"] {
-  display: none;
+    display: none;
+}
+
+.loginForm {
+    text-align: center;
 }
 
 .navButton {
-  /* background: #F7CAD0; */
-  text-align: center;
-  padding: 10px;
-  border-radius: 25px;
-  width: 80%;
-  display: block;
-  margin: auto;
-  border: none;
-  /* box-shadow: 0px 5px #B74865; */
-  /* text-decoration: none; */
+    /* background: #F7CAD0; */
+    text-align: center;
+    padding: 10px;
+    border-radius: 25px;
+    width: 80%;
+    display: block;
+    margin: auto;
+    border: none;
+    /* box-shadow: 0px 5px #B74865; */
+    /* text-decoration: none; */
 }
 
 .menuLink {
-  text-decoration: none;
-  font-family: 'Rubik', sans-serif;
-  color: inherit;
-  font-size: 20px;
-  width: 100%;
+    text-decoration: none;
+    font-family: 'Rubik', sans-serif;
+    color: inherit;
+    font-size: 20px;
+    width: 100%;
 }
 
 .bigText {
-  text-align: center;
-  font-size: 30px;
-  height: auto;
-  width: 80%;
-  margin: 15px auto 15px auto;
+    text-align: center;
+    font-size: 30px;
+    height: auto;
+    width: 80%;
+    margin: 15px auto 15px auto;
 }
 
 footer {
-  text-align: center;
-  font-size: 12px;
+    text-align: center;
+    font-size: 15px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: 15px;
+}
+
+a {
+    text-decoration: none;
 }
 
 .logo {
-  width: 300px;
-  margin: 50px auto 50px auto;
-  display: block;
+    width: 300px;
+    margin: 50px auto 50px auto;
+    display: block;
 }
 
 .MenuButton {
-  /* background-color: #96D9FF; */
-  width: 50px;
-  height: 50px;
-  /* border-radius: 50%; */
-  /* border: 10px solid #0065A6; */
-  outline: none;
-  padding: 0;
-  background: none;
-  border: none;
-  font-size: 20px;
-  position: fixed;
-  top:0;
-  left: 0;
-  /* transition: all .2s cubic-bezier(0, 1.26, .8, 1.28); */
+    /* background-color: #96D9FF; */
+    width: 50px;
+    height: 50px;
+    /* border-radius: 50%; */
+    /* border: 10px solid #0065A6; */
+    outline: none;
+    padding: 0;
+    background: none;
+    border: none;
+    font-size: 20px;
+    position: fixed;
+    top:0;
+    left: 0;
+    /* transition: all .2s cubic-bezier(0, 1.26, .8, 1.28); */
 }
 
 #flyoutMenu {
-  width: 100vw;
-  height: 100vh;
-  background-color: #FF5C8A;
-  position: fixed;
-  top: 0;
-  left: 0;
-  transition: transform .3s cubic-bezier(0, .52, 0, 1);
-  overflow: scroll;
-  z-index: 1000;
+    width: 100vw;
+    height: 100vh;
+    background-color: #FF5C8A;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: transform .3s cubic-bezier(0, .52, 0, 1);
+    overflow: scroll;
+    z-index: 1000;
 }
 
 #flyoutMenu.hide {
-  transform: translate3d(-100vw, 0, 0);
+    transform: translate3d(-100vw, 0, 0);
 }
 
 #flyoutMenu.show {
-  transform: translate3d(0vw, 0, 0);
-  overflow: hidden;
+    transform: translate3d(0vw, 0, 0);
+    overflow: hidden;
 }
 
 /* #flyoutMenu h2 a {
-  color: #333;
-  margin-left: 15px;
-  text-decoration: none;
+    color: #333;
+    margin-left: 15px;
+    text-decoration: none;
 }
 
 #flyoutMenu h2 a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 } */
 
 .menuOrganization {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 10px;
-  height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    height: 100vh;
 }

@@ -5,7 +5,6 @@ import DogSubmission from './DogSubmission';
 import DogInfo from './DogInfo';
 
 const UploadDog = () => {
-
     const [isDogUploaded, setIsDogUploaded] = useState(false);
     const [dogUploaded, setDogUploaded] = useState({});
     const [dogObject, setDogObject] = useState({});
@@ -22,8 +21,6 @@ const UploadDog = () => {
             .catch(error => console.log(`Error: ${error}`))
     }
 
-
-
     return (
         <>
             {isDogUploaded ?
@@ -35,4 +32,4 @@ const UploadDog = () => {
     )
 }
 
-export default UploadDog
+export default UploadDog;

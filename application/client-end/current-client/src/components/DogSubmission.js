@@ -60,4 +60,4 @@ const DogSubmission = ({setDogUploaded, setIsDogUploaded, getDogInfo}) => {
     )
 }
 
-export default DogSubmission
+export default DogSubmission;

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Button from './Button';
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
+
 const UserProfile = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -39,4 +40,4 @@ const UserProfile = () => {
     )
 }
 
-export default UserProfile
+export default UserProfile;
