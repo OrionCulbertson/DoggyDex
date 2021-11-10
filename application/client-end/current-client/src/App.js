@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store";
-import {About, Menu, Home, UserProfile, CreateAccount, LogIn} from "./components"
+import {About, Menu, Home, UserProfile, CreateAccount} from "./components"
 
 function App() {
   return (
