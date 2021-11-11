@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import { Button } from '.';
 import { FaArrowRight } from 'react-icons/fa';
+
 const DogFoundCard = ({ dogUploaded, dogObject, onClick }) => {
     // const dogBreed = dogObject.dogbreed;
     const dogBreed = "German Shepherd";

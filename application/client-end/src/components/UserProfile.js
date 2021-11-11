@@ -21,22 +21,30 @@ const UserProfile = () => {
     return (
         <>
             <Logo />
+            <div className="contentContainer">
             {isLoggedIn ?
-                null
+                <Link
+                    className="menuLink">
+                    onClick = { () => {
+                        isLoggedIn = false;
+                    }}
+                    <Button contents={<div>Log Out</div>} styleClass="stdButton" />
+                </Link>
+
                 :
+
                 <>
-                    <div className="contentContainer">
-                        {loginOptions.map((option, index) => (
-                            <div>
-                                <Link key={index} to={loginLinks[option]} className="menuLink">
-                                    <Button contents={option} styleClass="stdButton" />
-                                </Link>
-                                {/* <Button contents={<Link to={loginLinks[option]} className="menuLink">{option}</Link>} styleClass="stdButton" /> */}
-                            </div>
-                        ))}
-                    </div>
+                    {loginOptions.map((option, index) => (
+                        <div>
+                            <Link key={index} to={loginLinks[option]} className="menuLink">
+                                <Button contents={option} styleClass="stdButton" />
+                            </Link>
+                            {/* <Button contents={<Link to={loginLinks[option]} className="menuLink">{option}</Link>} styleClass="stdButton" /> */}
+                        </div>
+                    ))}
                 </>
             }
+            </div>
         </>
     )
 }
