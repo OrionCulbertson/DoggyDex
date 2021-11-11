@@ -66,6 +66,30 @@ input[type="file"] {
     width: 80%;
 }
 
+#loggedInUserProfile {
+    margin-bottom: 30px;
+}
+
+#logOutButton {
+    display: inline-block;
+    margin: 30px 0 auto;
+    /* width: 90%; */
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0 15px;
+    color: black;
+}
+.userProfileTableLine {
+    border-radius: 5px;
+}
+
+.userProfileTableLine td {
+    background-color: #ECECEC;
+    padding: 10px;
+}
+
 /*For the link below the login and create account forms*/
 .switchUserAccountAction {
     text-align: center;
@@ -100,7 +124,6 @@ input[type="file"] {
     border-radius: 25px;
 
 }
-
 
 .bigText {
     text-align: center;
