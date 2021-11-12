@@ -6,15 +6,12 @@ import { register } from "../actions/auth";
 import { useDispatch } from 'react-redux';
 
 const CreateAccount = () => {
-
     const [name, setName] = useState("");
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [successful, setSuccessful] = useState(false);
     const dispatch = useDispatch();
-
-
 
     const onChangeName = (e) => {
         const name = e.target.value;

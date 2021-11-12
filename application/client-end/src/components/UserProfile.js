@@ -7,8 +7,8 @@ import { logout } from '../actions/auth';
 
 const UserProfile = () => {
     //Change to check global user state
-    // const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const { isLoggedIn } = useSelector(state => state.auth);
+    const [isLoggedIn, setIsLoggedIn] = useState(true);
+    // const { isLoggedIn } = useSelector(state => state.auth);
     const dispatch = useDispatch();
     const loginOptions = [
         "Login",
@@ -33,25 +33,21 @@ const UserProfile = () => {
                 <>
                     <div className="contentContainer">
                         <table>
-                            <tr className="userProfileTableLine">
-                                <td>Name:</td>
-                                <td>TODO</td>
+                            <tr>
+                                <td className="firstCol">Name:</td>
+                                <td className="lastCol">TODO</td>
                             </tr>
-                            <tr className="userProfileTableLine">
-                                <td>Username:</td>
-                                <td>TODO</td>
+                            <tr>
+                                <td className="firstCol">Username:</td>
+                                <td className="lastCol">TODO</td>
                             </tr>
-                            <tr className="userProfileTableLine">
-                                <td>Email:</td>
-                                <td>TODO</td>
+                            <tr>
+                                <td className="firstCol">Email:</td>
+                                <td className="lastCol">TODO</td>
                             </tr>
-                            <tr className="userProfileTableLine">
-                                <td>Dogs Found:</td>
-                                <td>TODO</td>
-                            </tr>
-                            <tr className="userProfileTableLine">
-                                <td>Dog Breeds Found:</td>
-                                <td>TODO</td>
+                            <tr>
+                                <td className="firstCol">Dog Breeds Found:</td>
+                                <td className="lastCol">TODO</td>
                             </tr>
                         </table>
                     </div>
