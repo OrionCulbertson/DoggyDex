@@ -13,7 +13,7 @@ const DogFoundCard = ({ dogUploaded, dogObject, onClick }) => {
         <div>
             <img src={dogImage} alt={`${dogBreed} Picture`} className="dogPreview" />
             <p className="bigText">You found a dog!</p>
-            <p className="medText">We can say with {dogUploaded.confidenceScore}% it's a {dogBreed}</p>
+            <p className="medText">We can say with {dogUploaded.confidenceScore}% confidence it's a {dogBreed}</p>
             <Link to="/doggydex" onClick={onClick}>
                 <Button contents={<div>Go to DoggyDex <FaArrowRight/></div>} styleClass="stdButton" />
             </Link>

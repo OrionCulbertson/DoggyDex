@@ -20,7 +20,7 @@ const DogSubmission = ({setDogUploaded, setIsDogUploaded, getDogInfo}) => {
         e.preventDefault();
         const formData = new FormData();
         formData.append("file", file);
-
+        // console.log(file);
         try {
             const res = await axios.post("api/photo/upload", formData, {
                 headers: {
@@ -32,7 +32,7 @@ const DogSubmission = ({setDogUploaded, setIsDogUploaded, getDogInfo}) => {
             setUploadedFile({ fileName, filePath, dog_id }); //May not need this
             setMessage("File Uploaded");
             setDogUploaded({dog_id, confidenceScore});
-            // // setDogUploaded({dog_id: 10, confidenceScore: 90}); //Testing information
+            // setDogUploaded({dog_id: 10, confidenceScore: 90}); //Testing information
             getDogInfo(dog_id); //Loads dog object based off dog breed
             setIsDogUploaded(true); //Updates the page
             setFile({}); //Reset File Upload info
