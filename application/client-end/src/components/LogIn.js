@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
-import { Button, Logo } from "./"
+import { Button, Logo } from "."
 import { login } from "../actions/auth";
 
 
