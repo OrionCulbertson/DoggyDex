@@ -11,7 +11,8 @@ const About = () => {
     // const { isDogUploaded: isDogUploaded } = useSelector((state) => state.isDogUploaded);
     const check = () => {
         // dispatch(setMessage("hello"))
-        dispatch(setIsDogUploaded(!isDogUploaded));
+        // dispatch(setIsDogUploaded(!isDogUploaded));
+        console.log(JSON.parse(localStorage.getItem("user")));
     }
     return (
         <div>
