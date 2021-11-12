@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setIsDogUploaded } from '../actions/dogUploaded';
 
 const UploadDog = () => {
-    const { isDogUploaded } = useSelector(state => state.dogUploaded); //NOT WORKING, WHYYYYYYYYY
+    const { isDogUploaded } = useSelector(state => state.dogUploaded); 
     const [dogUploaded, setDogUploaded] = useState({}); //Contains Dog ID, Confidence Score
     const [dogObject, setDogObject] = useState({}); //Contains Entire Dog Object
     const dispatch = useDispatch();

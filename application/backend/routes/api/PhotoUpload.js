@@ -26,9 +26,9 @@ router.post('/upload', (req, res) => {
   //   //Get dog id of dog breed from database ->
 
   //   //Return file info w/ dog id
-  //   res.json({ fileName: file.name, filePath: `/uploads/${file.name}`, dog_id: 20 });
+  //   res.json({ fileName: file.name, filePath: `/uploads/${file.name}`, dog_id: 20, confidenceScore });
 
-  //   //Doesn't delete photo, needs added
+  //   //Delete photo, needs added
   // });
   res.send("Sending it back");
 });
