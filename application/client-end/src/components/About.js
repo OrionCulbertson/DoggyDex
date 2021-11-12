@@ -30,7 +30,6 @@ const About = () => {
             <button onClick={check}>check</button>
             <div>
                 <Link to="/">Return to Home Screen</Link>
-
             </div>
         </div>
     )

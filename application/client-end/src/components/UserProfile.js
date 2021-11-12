@@ -5,7 +5,7 @@ import Logo from './Logo';
 
 const UserProfile = () => {
     //Change to check global user state
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(true);
 
     const loginOptions = [
         "Login",
@@ -21,9 +21,40 @@ const UserProfile = () => {
     return (
         <>
             <Logo />
+            
             {isLoggedIn ?
-                null
+                <>
+                    <div className="contentContainer">
+                        <table>
+                            <tr className="userProfileTableLine">
+                                <td>Name:</td>
+                                <td>TODO</td>
+                            </tr>
+                            <tr className="userProfileTableLine">
+                                <td>Username:</td>
+                                <td>TODO</td>
+                            </tr>
+                            <tr className="userProfileTableLine">
+                                <td>Email:</td>
+                                <td>TODO</td>
+                            </tr>
+                            <tr className="userProfileTableLine">
+                                <td>Dogs Found:</td>
+                                <td>TODO</td>
+                            </tr>
+                            <tr className="userProfileTableLine">
+                                <td>Dog Breeds Found:</td>
+                                <td>TODO</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <Link id="logOutButton" className="menuLink">
+                        <Button contents={<div>Log Out</div>} id="logOutButton" styleClass="stdButton" />
+                    </Link>
+                </>
+
                 :
+
                 <>
                     <div className="contentContainer">
                         {loginOptions.map((option, index) => (
