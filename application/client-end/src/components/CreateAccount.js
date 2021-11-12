@@ -1,26 +1,78 @@
-import { BrowserRouter as Link } from "react-router-dom"
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Button, Logo } from "./"
 
+import { register } from "../actions/auth";
+import { useDispatch } from 'react-redux';
+
 const CreateAccount = () => {
+
+    const [name, setName] = useState("");
+    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [successful, setSuccessful] = useState(false);
+    const dispatch = useDispatch();
+
+
+
+    const onChangeName = (e) => {
+        const name = e.target.value;
+        setName(name);
+    };
+
+    const onChangeUsername = (e) => {
+        const username = e.target.value;
+        setUsername(username);
+    };
+
+    const onChangeEmail = (e) => {
+        const email = e.target.value;
+        setEmail(email);
+    };
+
+    const onChangePassword = (e) => {
+        const password = e.target.value;
+        setPassword(password);
+    };
+
     const onSubmit = async e => {
-        //TODO Define
+        e.preventDefault();
+
+        setSuccessful(false);
+
+        dispatch(register(name, username, email, password))
+            .then(() => {
+                setSuccessful(true);
+            })
+            .catch((e) => {
+                console.log(e);
+                setSuccessful(false);
+            });
+        console.log(`Successful: ${successful}`);
     }
-    
+
     return (
         <>
             <Logo />
             <div className="contentContainer">
                 <form onSubmit={onSubmit}>
-                    <input className="loginForm" type="text" placeholder="Name" required />
-                    <input className="loginForm" type="text" placeholder="Username" required />
-                    <input className="loginForm" type="text" placeholder="Email" required />
-                    <input className="loginForm" type="text" placeholder="Verify Email" required />
-                    <input className="loginForm" type="password" placeholder="Password" required />
-                    <input className="loginForm" type="password" placeholder="Verify Password" required />
+                    <div className="accountForm">
+                        <input className="loginField" type="text" placeholder="Name" required onChange={onChangeName} />
+                        <input className="loginField" type="text" placeholder="Username" required onChange={onChangeUsername} />
+                        <input className="loginField" type="email" placeholder="Email" required onChange={onChangeEmail} />
+                        <input className="loginField" type="email" placeholder="Verify Email" required />
+                        <input className="loginField" type="password" placeholder="Password" required onChange={onChangePassword} />
+                        <input className="loginField" type="password" placeholder="Verify Password" required />
+                    </div>
                     <Button contents={<div>Create Account</div>} styleClass="stdButton" type="submit" />
                 </form>
             </div>
-            <Link to="./log-in" className="switchUserAccountAction">Already have an account?</Link>
+            <div className="switchUserAccountAction">
+                <Link to="./log-in">
+                    Already have an account?
+                </Link>
+            </div>
         </>
     )
 }

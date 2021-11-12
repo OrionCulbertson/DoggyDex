@@ -10,3 +10,4 @@ export {default as MenuButton} from "./MenuButton";
 export {default as UploadDog} from "./UploadDog";
 export {default as UserProfile} from "./UserProfile";
 export {default as CreateAccount} from "./CreateAccount";
+export {default as DogFoundCard} from "./DogFoundCard";

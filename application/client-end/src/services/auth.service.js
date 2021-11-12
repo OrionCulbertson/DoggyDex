@@ -1,20 +1,20 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/api/auth";
+const API_URL = "http://localhost:8080/api/basicuser";
 
-const register = (name, username, email, password) => {
+const register = (name, userName, email, password) => {
   return axios.post(`${API_URL}/signup`, {
     name,
-    username,
+    userName,
     email,
     password,
   });
 };
 
-const login = (username, password) => {
+const login = (email, password) => {
   return axios
-    .post(`${API_URL}/signin`, {
-      username,
+    .post(`${API_URL}/login`, {
+      email,
       password,
     })
     .then((response) => {
@@ -25,7 +25,9 @@ const login = (username, password) => {
     });
 };
 
-const logout = () => {
+const logout = (msg) => {
+  console.log("msg")
+  console.log("Logging out from auth service");
   localStorage.removeItem("user");
 };
 
