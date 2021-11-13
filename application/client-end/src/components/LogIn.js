@@ -24,7 +24,7 @@ const Login = () => {
         setPassword(password);
     };
 
-    const onSubmit = async e => {
+    const onSubmit = e => {
         e.preventDefault();
 
         setLoading(true);

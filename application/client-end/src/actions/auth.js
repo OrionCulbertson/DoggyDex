@@ -49,11 +49,12 @@ export const login = (email, password) => (dispatch) => {
   // console.log("Is called");
   return AuthService.login(email, password).then(
     (data) => {
+      // console.log(`Data: ${JSON.parse(data)}`);
       dispatch({
         type: LOGIN_SUCCESS,
         payload: { user: data },
       });
-
+      // console.log("Logggggged in");
       return Promise.resolve();
     },
     (error) => {

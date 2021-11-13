@@ -8,7 +8,9 @@ import { logout } from '../actions/auth';
 const UserProfile = () => {
     //Change to check global user state
     // const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const { isLoggedIn } = useSelector(state => state.auth);
+    const { isLoggedIn, user } = useSelector(state => state.auth);
+    // const { user } = useSelector((state) => state.auth);
+
     const dispatch = useDispatch();
     const loginOptions = [
         "Login",
@@ -35,19 +37,15 @@ const UserProfile = () => {
                         <table>
                             <tr className="userProfileTableLine">
                                 <td>Name:</td>
-                                <td>TODO</td>
+                                <td>{user.name}</td>
                             </tr>
                             <tr className="userProfileTableLine">
                                 <td>Username:</td>
-                                <td>TODO</td>
+                                <td>{user.userName}</td>
                             </tr>
                             <tr className="userProfileTableLine">
                                 <td>Email:</td>
-                                <td>TODO</td>
-                            </tr>
-                            <tr className="userProfileTableLine">
-                                <td>Dogs Found:</td>
-                                <td>TODO</td>
+                                <td>{user.email}</td>
                             </tr>
                             <tr className="userProfileTableLine">
                                 <td>Dog Breeds Found:</td>

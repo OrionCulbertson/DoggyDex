@@ -6,7 +6,8 @@ import { setIsDogUploaded } from "../actions/dogUploaded";
 const About = () => {
     const { user: currentUser } = useSelector((state) => state.auth);
     const { message } = useSelector(state => state.message);
-    const { isDogUploaded } = useSelector(state => state.dogUploaded); //NOT WORKING, WHYYYYYYYYY
+    const { isDogUploaded } = useSelector(state => state.dogUploaded);
+    
     const dispatch = useDispatch();
     // const { isDogUploaded: isDogUploaded } = useSelector((state) => state.isDogUploaded);
     const check = () => {
