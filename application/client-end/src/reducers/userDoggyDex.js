@@ -10,13 +10,9 @@ import UserService from "../services/user.service";
 const user = JSON.parse(localStorage.getItem("user"));
 
 
-const initialState = user
-    ? {
-        userDoggyDex: [],
-    }
-    : {
-        userDoggyDex: null,
-    };
+const initialState = {
+    userDoggyDex: undefined
+}
 
 export default function (state = initialState, action) {
     const {type, payload} = action;
@@ -30,7 +26,7 @@ export default function (state = initialState, action) {
         case CLEAR_USER_DOGGYDEX: 
             return {
                 ...state,
-                userDoggyDex: null,
+                userDoggyDex: undefined,
             };
         default: return state;
     }

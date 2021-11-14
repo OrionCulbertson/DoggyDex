@@ -27,7 +27,10 @@ const About = () => {
     }
 
     const getUserDogs = () => {
-        console.log(userDoggyDex);
+        // console.log(userDoggyDex);
+        // userService.getUserDoggyDex().then(res => console.log);
+        userService.getUserDoggyDex().then(res => console.log(res));
+        userService.dog();
     }
 
     const onSubmit = (e) => {

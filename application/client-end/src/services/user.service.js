@@ -10,7 +10,7 @@ import authHeader from "./auth-header";
 
 
 const getUserDoggyDex = () => {
-  axios.get(`/api/userdoggydex/getDogs`, { headers: authHeader() })
+  return axios.get(`/api/userdoggydex/getDogs`, { headers: authHeader() })
     .then(res => {
       const fetchedDoggyDex = res.data.breedIDs.map((entry) => {
         return entry.doggydexbreedid;

@@ -9,7 +9,7 @@ import {
 } from "./types";
 
 import AuthService from "../services/auth.service";
-import userService from "../services/user.service";
+import UserService from "../services/user.service";
 import { setUserDoggydex } from "./userDoggyDex";
 
 export const register = (name, username, email, password) => (dispatch) => {
@@ -57,10 +57,9 @@ export const login = (email, password) => (dispatch) => {
         type: LOGIN_SUCCESS,
         payload: { user: data },
       });
-      userService.getUserDoggyDex().then(res => {
+      UserService.getUserDoggyDex().then(res => {
         dispatch(setUserDoggydex(res))
-      });
-      // console.log("Logggggged in");
+      }).catch(error => console.log(error));
       return Promise.resolve();
     },
     (error) => {
