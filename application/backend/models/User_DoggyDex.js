@@ -1,15 +1,15 @@
 const mongoose = require('mongoose');
 
-const User_Doggydex = new mongoose.Schema({
-    _id: mongoose.Schema.Types.ObjectId,
-    userId: {
+const User_Dog = new mongoose.Schema({
+    // _id: mongoose.Schema.Types.ObjectId,
+    submittedUserId: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
     },
-    breedid: {
+    doggydexbreedid: {
         type: String,
         required: true
     }
 });
 
-module.exports = mongoose.model('user_doggydex', User_Doggydex);
+module.exports = mongoose.model('user_dog', User_Dog);

@@ -27,7 +27,7 @@ const login = (email, password) => {
     });
 };
 
-const logout = (msg) => {
+const logout = () => {
   // console.log("msg")
   console.log("Logging out from auth service");
   localStorage.removeItem("user");

@@ -1,9 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Button from './Button';
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../actions/auth';
+
+
+
 
 const UserProfile = () => {
     //Change to check global user state
@@ -27,6 +30,14 @@ const UserProfile = () => {
         console.log("Logging out...");
         dispatch(logout("msg"));
     }
+
+    // Could be used on doggydex page to update user doggydex
+    // useEffect( () => {
+    //     console.log("Effect", isLoggedIn);
+    //     // console.log(UserService.getUserDoggyDex())
+    // }, [isLoggedIn]);
+
+
     return (
         <>
             <Logo />
