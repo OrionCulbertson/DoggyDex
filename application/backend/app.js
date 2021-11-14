@@ -7,6 +7,7 @@ const morgan = require('morgan')
 const basicUserURL = require('./routes/api/basicUser');
 const dogbreedURL = require('./routes/api/dogBreed');
 const photoUploadURL = require('./routes/api/PhotoUpload');
+const userDoggyDex = require('./routes/api/userDoggydex');
 // Enables EXPRESS
 const app = express();
 // Connect Database
@@ -24,6 +25,7 @@ app.get('/', (req, res) => res.send('Hello world!'));
 app.use('/api/basicuser', basicUserURL);
 app.use('/api/dogbreed', dogbreedURL);
 app.use('/api/photo', photoUploadURL);
+app.use('/api/userdoggydex', userDoggyDex);
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

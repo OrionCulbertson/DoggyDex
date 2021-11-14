@@ -7,7 +7,7 @@ const About = () => {
     const { user: currentUser } = useSelector((state) => state.auth);
     const { message } = useSelector(state => state.message);
     const { isDogUploaded } = useSelector(state => state.dogUploaded);
-    
+
     const dispatch = useDispatch();
     // const { isDogUploaded: isDogUploaded } = useSelector((state) => state.isDogUploaded);
     const check = () => {
@@ -30,6 +30,9 @@ const About = () => {
                 {isDogUploaded ? "dog is up" : "dog is not up"}
             </div>
             <button onClick={check}>check</button>
+            <form>
+                
+            </form>
             <div>
                 <Link to="/">Return to Home Screen</Link>
             </div>

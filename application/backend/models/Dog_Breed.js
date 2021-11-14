@@ -1,28 +1,33 @@
-// models/Book.js
+// models/Basic_User.js
 
 const mongoose = require('mongoose');
 
-const DogBreedSchema = new mongoose.Schema({
-  dogbreed: {
+const User_DoggyDex = new mongoose.Schema({
+
+
+  _id: mongoose.Schema.Types.ObjectId,
+
+  name: {
     type: String,
     required: true
   },
-  breedid: {
+  userName: {
     type: String,
     required: true
   },
-  description: {
+  email: {
+    type: String, 
+    required: true, 
+    unique: true, 
+    match: /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+},
+  password: {
     type: String,
     required: true
   },
-  img: {
-    type: String,
-    required: true
-  },
-  updated_date: {
-    type: Date,
+  date: {type:Date,
     default: Date.now
   }
 });
 
-module.exports = Dog = mongoose.model('dogbreeds', DogBreedSchema);
+module.exports = mongoose.model('user_doggydex', User_DoggyDex);

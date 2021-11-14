@@ -130,7 +130,7 @@ router.post("/login", (req, res, next) => {
             name: user.name,
             userName: user.userName,
             email: user.email,
-            userId: user.userId,
+            userId: user._id,
           });
         }
 
