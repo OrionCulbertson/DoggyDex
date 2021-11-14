@@ -4,7 +4,7 @@
 -> Back end directory commands:
 
 1. Navigate to back-end folder.
-Open terminla and run:
+Open terminal and run:
 
 $ npm install
 $ npm i config
@@ -12,10 +12,10 @@ $ npm install cors
 $ npm run app **(Should start Node server and mongoDB)**
 
 
-2. Navigate to clien-end dir.
+2. Navigate to client-end dir.
 
- open another terminal and run:
- 
+Open another terminal and run:
+
 $ npm install --save react-router-dom
 $ npm install --save axios
 $ npm install
