@@ -49,6 +49,25 @@ const CreateAccount = () => {
         console.log(`Successful: ${successful}`);
     }
 
+    const validateMatch = (e) => {
+        // Find the validation image div
+        var validationElement = document.getElementById('nameValidation');
+        // Get the form values
+        var name1 = document.forms["test"]["name1"].value;
+        var name2 = document.forms["test"]["name2"].value;
+        // Reset the validation element styles
+        validationElement.style.display = 'none';
+        validationElement.className = 'validation-image';
+        // Check if name2 isn't null or undefined or empty
+        if (name2) {
+            // Show the validation element
+            validationElement.style.display = 'inline-block';
+            // Choose which class to add to the element
+            validationElement.className += 
+                (name1 == name2 ? ' validation-success' : ' validation-error');
+        }
+    }
+
     return (
         <>
             <Logo />
@@ -58,9 +77,9 @@ const CreateAccount = () => {
                         <input className="loginField" type="text" placeholder="Name" required onChange={onChangeName} />
                         <input className="loginField" type="text" placeholder="Username" required onChange={onChangeUsername} />
                         <input className="loginField" type="email" placeholder="Email" required onChange={onChangeEmail} />
-                        <input className="loginField" type="email" placeholder="Verify Email" required />
+                        <input className="loginField" type="email" placeholder="Verify Email" onBlur={validateMatch} required />
                         <input className="loginField" type="password" placeholder="Password" required onChange={onChangePassword} />
-                        <input className="loginField" type="password" placeholder="Verify Password" required />
+                        <input className="loginField" type="password" placeholder="Verify Password" onBlur={validateMatch} required />
                     </div>
                     <Button contents={<div>Create Account</div>} styleClass="stdButton" type="submit" />
                 </form>

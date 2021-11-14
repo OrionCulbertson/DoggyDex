@@ -7,8 +7,8 @@ import { logout } from '../actions/auth';
 
 const UserProfile = () => {
     //Change to check global user state
-    const [isLoggedIn, setIsLoggedIn] = useState(true);
-    // const { isLoggedIn } = useSelector(state => state.auth);
+    // const [isLoggedIn, setIsLoggedIn] = useState(true);
+    const { isLoggedIn } = useSelector(state => state.auth);
     const dispatch = useDispatch();
     const loginOptions = [
         "Login",
