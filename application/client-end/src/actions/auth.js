@@ -5,9 +5,12 @@ import {
   LOGIN_FAIL,
   LOGOUT,
   SET_MESSAGE,
+  CLEAR_USER_DOGGYDEX,
 } from "./types";
 
 import AuthService from "../services/auth.service";
+import UserService from "../services/user.service";
+import { setUserDoggydex } from "./userDoggyDex";
 
 export const register = (name, username, email, password) => (dispatch) => {
   return AuthService.register(name, username, email, password).then(
@@ -49,11 +52,14 @@ export const login = (email, password) => (dispatch) => {
   // console.log("Is called");
   return AuthService.login(email, password).then(
     (data) => {
+      // console.log(`Data: ${JSON.parse(data)}`);
       dispatch({
         type: LOGIN_SUCCESS,
         payload: { user: data },
       });
-
+      UserService.getUserDoggyDex().then(res => {
+        dispatch(setUserDoggydex(res))
+      }).catch(error => console.log(error));
       return Promise.resolve();
     },
     (error) => {
@@ -84,4 +90,8 @@ export const logout = () => (dispatch) => {
   dispatch({
     type: LOGOUT,
   });
+
+  dispatch( {
+    type: CLEAR_USER_DOGGYDEX,
+  })
 };

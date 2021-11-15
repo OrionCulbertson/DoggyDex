@@ -6,6 +6,8 @@ const morgan = require('morgan');
 // routes
 const basicUserURL = require('./routes/api/basicUser');
 const dogbreedURL = require('./routes/api/dogBreed');
+const photoUploadURL = require('./routes/api/PhotoUpload');
+const userDoggyDex = require('./routes/api/userDoggydex');
 const imageURL = require('./routes/api/PhotoUpload');
 // Enables EXPRESS
 const app = express();
@@ -23,6 +25,8 @@ app.get('/', (req, res) => res.send('Hello world!'));
 // use Router
 app.use('/api/basicuser', basicUserURL);
 app.use('/api/dogbreed', dogbreedURL);
+app.use('/api/photo', photoUploadURL);
+app.use('/api/userdoggydex', userDoggyDex);
 app.use('/api/image',imageURL);
 
 

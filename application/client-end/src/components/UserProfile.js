@@ -1,14 +1,24 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Button from './Button';
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../actions/auth';
+import UserService from '../services/user.service';
+import { setUserDoggydex } from '../actions/userDoggyDex';
+import userService from '../services/user.service';
+import ProfileLine from './ProfileLine';
+
+
+
 
 const UserProfile = () => {
     //Change to check global user state
     // const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const { isLoggedIn } = useSelector(state => state.auth);
+    const { isLoggedIn, user } = useSelector(state => state.auth);
+    // const { user } = useSelector((state) => state.auth);
+    const { userDoggyDex } = useSelector(state => state.userDoggyDex);
+
     const dispatch = useDispatch();
     const loginOptions = [
         "Login",
@@ -23,8 +33,22 @@ const UserProfile = () => {
 
     const signOut = () => {
         console.log("Logging out...");
-        dispatch(logout("msg"));
+        dispatch(logout());
     }
+
+    // Could be used on doggydex page to update user doggydex
+    useEffect(() => {
+        console.log("Effect", isLoggedIn);
+        // console.log(UserService.getUserDoggyDex())
+        if (isLoggedIn && !userDoggyDex) {
+            UserService.getUserDoggyDex().then(res => {
+                dispatch(setUserDoggydex(res));
+            }).catch(err => console.log(err))
+        }
+        // userService.getUserDoggyDex().then(res =>console.log(res ))
+    }, [isLoggedIn]);
+
+
     return (
         <>
             <Logo />
@@ -32,28 +56,31 @@ const UserProfile = () => {
             {isLoggedIn ?
                 <>
                     <div className="contentContainer">
-                        <table>
-                            <tr className="userProfileTableLine">
-                                <td>Name:</td>
-                                <td>TODO</td>
-                            </tr>
-                            <tr className="userProfileTableLine">
-                                <td>Username:</td>
-                                <td>TODO</td>
-                            </tr>
-                            <tr className="userProfileTableLine">
-                                <td>Email:</td>
-                                <td>TODO</td>
-                            </tr>
-                            <tr className="userProfileTableLine">
-                                <td>Dogs Found:</td>
-                                <td>TODO</td>
-                            </tr>
-                            <tr className="userProfileTableLine">
-                                <td>Dog Breeds Found:</td>
-                                <td>TODO</td>
-                            </tr>
-                        </table>
+                        {/* <table className="tableStyle">
+                            <tbody>
+                                <tr className="userProfileTableLine">
+                                    <td>Name:</td>
+                                    <td>{user.name}</td>
+                                </tr>
+                                <tr className="userProfileTableLine">
+                                    <td>Username:</td>
+                                    <td>{user.userName}</td>
+                                </tr>
+                                <tr className="userProfileTableLine">
+                                    <td>Email:</td>
+                                    <td>{user.email}</td>
+                                </tr>
+                                <tr className="userProfileTableLine">
+                                    <td>Dog Breeds Found:</td>
+                                    <td>{userDoggyDex ? userDoggyDex.length : 0}</td>
+                                </tr>
+                            </tbody>
+                        </table> */}
+
+                        <ProfileLine title="Name" contents={user.name} />
+                        <ProfileLine title="Username" contents={user.userName} />
+                        <ProfileLine title="Email" contents={user.email} />
+                        <ProfileLine title="Dog Breeds Found" contents={userDoggyDex ? userDoggyDex.length : 0} />
                     </div>
                     <Link id="logOutButton" className="menuLink" to="/" onClick={signOut}>
                         <Button contents={<div>Log Out</div>} id="logOutButton" styleClass="stdButton" />
