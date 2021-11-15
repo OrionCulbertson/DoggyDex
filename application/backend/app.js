@@ -23,7 +23,7 @@ app.get('/', (req, res) => res.send('Hello world!'));
 // use Router
 app.use('/api/basicuser', basicUserURL);
 app.use('/api/dogbreed', dogbreedURL);
-app.use('/api/image',imageURL);
+app.use('/api/image', imageURL);
 
 
 const PORT = process.env.PORT || 8080;

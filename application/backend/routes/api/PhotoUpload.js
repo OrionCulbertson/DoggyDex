@@ -8,8 +8,8 @@ const upload = multer({
     fileSize: 1024 * 1024 * 5 // max file size: ~ 5.3MB = 5.2m bytes
   },
   fileFilter(req, file, cb) {
-    if (!file.originalname.match(/\.(jpeg|jpg)$/)) { // The two file extensions thar can be handled
-      cb(new Error('only upload files with jpg or jpeg format.'));
+    if (!file.originalname.match(/\.(jpeg|jpg|png)$/)) { // The three img-file extensions that can be handled
+      cb(new Error('only upload files with jpg, jpeg or png format.'));
     }
     cb(undefined, true); // continue with upload
   }
