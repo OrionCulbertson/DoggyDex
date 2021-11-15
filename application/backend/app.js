@@ -1,12 +1,12 @@
 const express = require('express');
 const connectDB = require('./config/db');
 var cors = require('cors');
-const morgan = require('morgan')
+const morgan = require('morgan');
 
 // routes
 const basicUserURL = require('./routes/api/basicUser');
 const dogbreedURL = require('./routes/api/dogBreed');
-const photoUploadURL = require('./routes/api/PhotoUpload');
+const imageURL = require('./routes/api/PhotoUpload');
 // Enables EXPRESS
 const app = express();
 // Connect Database
@@ -23,7 +23,8 @@ app.get('/', (req, res) => res.send('Hello world!'));
 // use Router
 app.use('/api/basicuser', basicUserURL);
 app.use('/api/dogbreed', dogbreedURL);
-app.use('/api/photo', photoUploadURL);
+app.use('/api/image',imageURL);
+
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
