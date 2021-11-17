@@ -17,7 +17,12 @@ const CreateAccount = () => {
                     <input className="loginForm" type="text" placeholder="Verify Email" required />
                     <input className="loginForm" type="password" placeholder="Password" required />
                     <input className="loginForm" type="password" placeholder="Verify Password" required />
-                    <Button contents={<div>Create Account</div>} styleClass="stdButton" type="submit" />
+                    <Button 
+                        contents={<div>Create Account</div>} 
+                        styleClass="stdButton" 
+                        type="submit"
+                        onClick={()=>console.log('clicked')} 
+                    />
                 </form>
             </div>
             <Link to="./log-in" className="switchUserAccountAction">Already have an account?</Link>
