@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import { Button, Logo } from "."
 import { login } from "../actions/auth";
-
+import UserService from "../services/user.service";
 
 const Login = () => {
     const { isLoggedIn } = useSelector(state => state.auth);
@@ -24,7 +24,9 @@ const Login = () => {
         setPassword(password);
     };
 
-    const onSubmit = async e => {
+   
+
+    const onSubmit = (e) => {
         e.preventDefault();
 
         setLoading(true);
@@ -32,15 +34,16 @@ const Login = () => {
         // form.current.validateAll();
 
 
-        dispatch(login(email, password))
+         dispatch(login(email, password))
             .then(() => {
-                setLoading(false);
 
-                //Load in the user's doggydex IDs
+                
             })
-            .catch(() => {
-                setLoading(false);
+            .catch((err) => {
+                // setLoading(false);
+                console.log(err.message);
             });
+
     }
 
     if (isLoggedIn) {
@@ -49,7 +52,7 @@ const Login = () => {
 
     return (
         <>
-            <Logo />
+            
             <div className="contentContainer">
                 <form onSubmit={onSubmit}>
                     <div className="accountForm">
