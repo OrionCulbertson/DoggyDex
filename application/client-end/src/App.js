@@ -18,7 +18,7 @@ function App() {
           <Route path="/log-in" component={Login} />
           <Route path="/create-account" component={CreateAccount} />
           <Route path="/doggydex" component={DoggyDex} />
-          <Route path="/doginfo/" component={DogInfo}/>
+          <Route path="/doginfo/" component={DogInfo} />
           <footer>
             <Link to="/about">About the Devs</Link>
           </footer>

@@ -56,6 +56,7 @@ const UserProfile = () => {
             {isLoggedIn ?
                 <>
                     <div className="contentContainer">
+<<<<<<< HEAD
                         {/* <table className="tableStyle">
                             <tbody>
                                 <tr className="userProfileTableLine">
@@ -81,6 +82,26 @@ const UserProfile = () => {
                         <ProfileLine title="Username" contents={user.userName} />
                         <ProfileLine title="Email" contents={user.email} />
                         <ProfileLine title="Dog Breeds Found" contents={userDoggyDex ? userDoggyDex.length : 0} />
+=======
+                        <table>
+                            <tr>
+                                <td className="firstCol">Name:</td>
+                                <td className="lastCol">TODO</td>
+                            </tr>
+                            <tr>
+                                <td className="firstCol">Username:</td>
+                                <td className="lastCol">TODO</td>
+                            </tr>
+                            <tr>
+                                <td className="firstCol">Email:</td>
+                                <td className="lastCol">TODO</td>
+                            </tr>
+                            <tr>
+                                <td className="firstCol">Dog Breeds Found:</td>
+                                <td className="lastCol">TODO</td>
+                            </tr>
+                        </table>
+>>>>>>> front-end
                     </div>
                     <Link id="logOutButton" className="menuLink" to="/" onClick={signOut}>
                         <Button contents={<div>Log Out</div>} id="logOutButton" styleClass="stdButton" />

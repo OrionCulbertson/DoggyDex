@@ -33,8 +33,7 @@ const Login = () => {
 
         // form.current.validateAll();
 
-
-         dispatch(login(email, password))
+        dispatch(login(email, password))
             .then(() => {
 
                 
