@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import { Provider } from "react-redux";
+import { Provider, useSelector } from "react-redux";
 import store from "./store";
-import { About, Menu, Home, UserProfile, CreateAccount, Login, DoggyDex, DogInfo } from "./components"
+
+import { About, Menu, Home, UserProfile, CreateAccount, Login, DoggyDex, DogInfo, DogFoundCard } from "./components"
 import { Logo } from './components';
 
 function App() {
-  return (
-    
+  return ( 
     <Provider store={store}>
       <Router>
         <div>

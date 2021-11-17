@@ -3,12 +3,19 @@ import axios from "axios"
 import Button from './Button';
 import DogSubmission from './DogSubmission';
 import DogInfo from './DogInfo';
+import { useDispatch, useSelector } from 'react-redux';
+import { setIsDogUploaded } from '../actions/dogUploaded';
 
 const UploadDog = () => {
-    const [isDogUploaded, setIsDogUploaded] = useState(false);
-    const [dogUploaded, setDogUploaded] = useState({});
-    const [dogObject, setDogObject] = useState({});
+    const { isDogUploaded } = useSelector(state => state.dogUploaded); 
+    const [dogUploaded, setDogUploaded] = useState({}); //Contains Dog ID, Confidence Score
+    const [dogObject, setDogObject] = useState({}); //Contains Entire Dog Object
+    const dispatch = useDispatch();
 
+    const dispatchDogUploaded = (value) => {
+        dispatch(setIsDogUploaded(value));
+    }
+    
     const getDogInfo = (dog_id) => {
         //TODO: DEFINE IT
         // axios.get(`/dog-info/${dog_id}`)
@@ -25,9 +32,9 @@ const UploadDog = () => {
     return (
         <>
             {isDogUploaded ?
-                <DogInfo dogObject={dogObject} />
+                <DogInfo dogUploaded={dogUploaded} dogObject={dogObject} setIsDogUploaded={dispatchDogUploaded} />
                 :
-                <DogSubmission setDogUploaded={setDogUploaded} setIsDogUploaded={setIsDogUploaded} getDogInfo={getDogInfo} />
+                <DogSubmission setDogUploaded={setDogUploaded} setIsDogUploaded={dispatchDogUploaded} getDogInfo={getDogInfo} />
             }
         </>
     )

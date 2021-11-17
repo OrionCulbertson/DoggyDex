@@ -1,5 +1,3 @@
-// models/Book.js
-
 const mongoose = require('mongoose');
 
 const DogBreedSchema = new mongoose.Schema({
