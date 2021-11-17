@@ -88,21 +88,18 @@ table {
     color: black;
 }
 
-.firstCol {
-    background-color: #ECECEC;
-    padding: 10px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+.userProfileTableLine {
+    border-radius: 5px;
 }
 
-.lastCol {
+.userProfileTableLine td {
     background-color: #ECECEC;
     padding: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
 }
+
 
 /*For the link below the login and create account forms*/
+
 .switchUserAccountAction {
     text-align: center;
     margin-top: 10px;
@@ -149,7 +146,6 @@ table {
     width: 100%;
     margin: auto;
     border-radius: 25px;
-
 }
 
 .bigText {
@@ -175,6 +171,9 @@ footer {
     bottom: 0;
     width: 100%;
     padding-bottom: 15px;
+    /* position: fixed;
+    bottom: 0;
+    width: 100%; */
 }
 
 a {
@@ -200,7 +199,7 @@ a {
     border: none;
     font-size: 20px;
     position: fixed;
-    top:0;
+    top: 0;
     left: 0;
     /* transition: all .2s cubic-bezier(0, 1.26, .8, 1.28); */
 }
@@ -243,4 +242,39 @@ a {
     flex-direction: column;
     gap: 10px;
     height: 100vh;
+}
+
+.devPhoto {
+    display: block;
+    /* height: 50%; */
+    width: 90%;
+    border-radius: 25px;
+    margin: auto;
+}
+
+.devName {
+    font-size: 30px;
+    text-align: center;
+}
+
+.contentContainer hr {
+    margin: 0 auto 0 auto;
+    width: 90%;
+}
+
+.devText {
+    width: 90%;
+    margin: auto;
+    white-space: pre-wrap;
+    font-family: 'Rubik', sans-serif;
+    color: #770024;
+    text-align: center;
+    font-size: 15px;
+}
+
+.devContainer {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: flex-start;
 }
