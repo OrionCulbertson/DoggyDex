@@ -6,11 +6,13 @@ import {
   LOGOUT,
   SET_MESSAGE,
   CLEAR_USER_DOGGYDEX,
+  SET_LEARNING_MODE
 } from "./types";
 
 import AuthService from "../services/auth.service";
 import UserService from "../services/user.service";
 import { setUserDoggydex } from "./userDoggyDex";
+import { setLearningMode } from "./learningMode";
 
 export const register = (name, username, email, password) => (dispatch) => {
   return AuthService.register(name, username, email, password).then(
@@ -57,6 +59,10 @@ export const login = (email, password) => (dispatch) => {
         type: LOGIN_SUCCESS,
         payload: { user: data },
       });
+      dispatch({
+        type: SET_LEARNING_MODE,
+        payload: true
+      })
       UserService.getUserDoggyDex().then(res => {
         dispatch(setUserDoggydex(res))
       }).catch(error => console.log(error));
@@ -90,6 +96,11 @@ export const logout = () => (dispatch) => {
   dispatch({
     type: LOGOUT,
   });
+
+  dispatch({
+    type: SET_LEARNING_MODE,
+    payload: false
+  })
 
   dispatch( {
     type: CLEAR_USER_DOGGYDEX,

@@ -51,7 +51,7 @@ const UserProfile = () => {
 
     return (
         <>
-            <Logo />
+            
 
             {isLoggedIn ?
                 <>
