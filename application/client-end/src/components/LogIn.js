@@ -31,7 +31,6 @@ const Login = () => {
 
         // form.current.validateAll();
 
-
         dispatch(login(email, password))
             .then(() => {
                 setLoading(false);

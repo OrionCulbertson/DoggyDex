@@ -57,6 +57,12 @@ input[type="file"] {
     align-items: center;
 }
 
+/*
+#createAccountFormContainer {
+    width: 400px;
+}
+*/
+
 .loginField {
     text-align: center;
     padding-top: 10px;
@@ -91,11 +97,27 @@ table {
     padding: 10px;
 }
 
+
 /*For the link below the login and create account forms*/
 
 .switchUserAccountAction {
     text-align: center;
     margin-top: 10px;
+}
+
+/* Shared styling */
+.validation-image {
+    display: none;
+}
+
+/* Error styling */
+.validation-error {
+    background-color: #ff0000;
+}
+
+/* Success styling */
+.validation-success {
+    background-color: #00ff00;
 }
 
 .navButton {
