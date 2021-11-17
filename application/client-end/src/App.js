@@ -13,7 +13,7 @@ function App() {
           <Route path="/user-profile" component={UserProfile} />
           <Route path="/log-in" component={Login} />
           <Route path="/create-account" component={CreateAccount} />
-          <footer>
+          <footer >
             <Link to="/about">About the Devs</Link>
           </footer>
         </div>
