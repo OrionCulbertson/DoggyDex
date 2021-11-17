@@ -35,12 +35,12 @@ const DogSubmission = ({ setDogUploaded, setIsDogUploaded, getDogInfo }) => {
       })
         .then(res => {
           setImgFile('http://localhost:8080/api/image/id/' + res.data._id);
-          console.log(imgFile);
+          // console.log(imgFile);
           
-          // axios.get(imgFile).then(res => {
-          //   // setTestImage(res.data);
-          //   // console.log(res);
-          // })
+          //Get dog ID from returned dog breed
+          //Get whole dog w/ getDogInfo
+          //Log Breed ID in user's Doggydex
+          //Refresh loaded doggydex
         })
     } catch (error) {
       error.response("Err" + error.response.data);

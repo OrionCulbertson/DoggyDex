@@ -22,6 +22,11 @@ router.post('/upload', upload.single('image'), async (req, res) => {
       photo.photo = file;
       await photo.save();// Image is sent to MongoDB
       res.status(201).send({ _id: photo._id }); // Returns Photo obj back to caller.
+    
+      //Send photo link to ML
+      //ML returns {breedName: "Collie", confScore: .9}
+      //Return this ^
+    
     } catch (error) {
       res.status(500).send({
         upload_error: 'Error while uploading file...Try again later.'
