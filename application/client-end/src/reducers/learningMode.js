@@ -5,7 +5,6 @@ const initialState = {
 };
 
 export default function (state = initialState, action) {
-  //console.log('inside reducer', action)
   switch (action.type) {
     case SET_LEARNING_MODE:
       return  {
