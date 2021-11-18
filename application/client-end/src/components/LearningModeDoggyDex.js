@@ -5,7 +5,8 @@ const LearningModeDoggyDex = ({ dogData }) => {
 
     const history = useHistory();
     const handleClick = (dogs) => {
-        history.push('/doginfo', {dog: dogs});
+        console.log("inside lmdd", dogs)
+        history.push('/doginfo', {dogs: dogs});
    }
 
     return (

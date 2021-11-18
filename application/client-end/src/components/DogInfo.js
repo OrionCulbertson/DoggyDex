@@ -3,9 +3,8 @@ import { useHistory } from 'react-router-dom';
 
 //https://dev.to/m_adams1909/data-fetching-with-axios-in-react-made-simple-2jei
 
-const DogInfo = (props) => {
-    const dog = props.location.state.dog
-    console.log(dog)
+const DogInfo = ( dogs ) => {
+    const dog = dogs.location.state.dogs;
     const history = useHistory();
     const handleClick = () => {
         history.goBack();
