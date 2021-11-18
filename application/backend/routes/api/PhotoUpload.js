@@ -22,12 +22,14 @@ router.post('/upload', upload.single('image'), async (req, res) => {
     try {
         const photo = new Photo(req.body);
         const file = req.file.buffer;
+        console.log(file);
         photo.photo = file;
         await photo.save();// Image is sent to MongoDB
 
-        let resData;
+        /*
+        let resData = [];
 
-        const python = spawn('python', ['script.py', breedName, confidenceScore]);
+        const python = spawn('python', ['photoTest.py', file]);
 
         // collect data from script
         python.stdout.on('data', function (data) {
@@ -44,6 +46,7 @@ router.post('/upload', upload.single('image'), async (req, res) => {
             //res.send(dataToSend);
             res.send(resData.join(''))
         })
+        */
 
         res.status(201).send({ _id: photo._id }); // Returns Photo obj back to caller.
         
