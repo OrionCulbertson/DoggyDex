@@ -5,7 +5,7 @@ import { Button, Logo } from "."
 import { login } from "../actions/auth";
 import UserService from "../services/user.service";
 
-const Login = () => {
+const LogIn = () => {
     const { isLoggedIn } = useSelector(state => state.auth);
     const { message } = useSelector(state => state.message);
     const dispatch = useDispatch();
@@ -70,4 +70,4 @@ const Login = () => {
     );
 }
 
-export default Login;
+export default LogIn;
