@@ -24,7 +24,6 @@ const Menu = () => {
     };
     const { isDogUploaded } = useSelector(state => state.dogUploaded); //NOT WORKING, WHYYYYYYYYY
 
-
     const location = useLocation();
     const dispatch = useDispatch();
 

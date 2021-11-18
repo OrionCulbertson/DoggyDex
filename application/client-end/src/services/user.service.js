@@ -7,8 +7,6 @@ import authHeader from "./auth-header";
 //   return axios.get(`${API_URL}/user/doggydex`, { headers: authHeader() });
 // };
 
-
-
 const getUserDoggyDex = () => {
   return axios.get(`/api/userdoggydex/getDogs`, { headers: authHeader() })
     .then(res => {

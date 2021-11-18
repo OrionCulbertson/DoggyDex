@@ -5,12 +5,13 @@ const initialState = {
 };
 
 export default function (state = initialState, action) {
-  const { type, payload } = action;
 
-  switch (type) {
+  switch (action.type) {
     case SET_LEARNING_MODE:
-      return { isLearningMode: payload };
-
+      return  {
+        ...state,
+        isLearningMode: action.payload,
+      }
     default:
       return state;
   }
