@@ -1,15 +1,30 @@
-import React, {useState} from 'react'
+import React from 'react';
+import { useHistory } from 'react-router-dom';
+
 //https://dev.to/m_adams1909/data-fetching-with-axios-in-react-made-simple-2jei
 
 const DogInfo = (props) => {
     const dog = props.location.state.dog
     console.log(dog)
+    const history = useHistory();
+    const handleClick = () => {
+        history.goBack();
+    }
     return (
-        <div className="contentContainer">
-            <h1>Dog:</h1>
-            <h1>{dog.dogbreed}</h1>
-            <img src={dog.img}></img>
-            <p>{dog.description}</p>
+        <div>
+            <div className="contentContainer">
+                <h1>Dog:</h1>
+                <h1>{dog.dogbreed}</h1>
+                <img src={dog.img}></img>
+                <p>{dog.description}</p>
+            </div>
+            <div className="contentContainer" id="dog-info-bttn-container">
+                <button className="dog-info-bttn" onClick={() => handleClick()}>
+                    GO BACK
+                </button>
+            </div>
+            
+
             
         </div>
 // import React, { useState } from 'react'
