@@ -20,8 +20,6 @@ const config = require("../../config/auth.config");// Keeps secret key
 //   return hashedPassword;
 // } in case we implement update user function will be necc. 
 
-
-
 // Load Basic_User model
 const BasicUser = require('../../models/Basic_User');
 

@@ -8,6 +8,7 @@ import { useState } from "react";
 import authHeader from "../services/auth-header";
 import userService from "../services/user.service";
 import { setUserDoggydex } from "../actions/userDoggyDex";
+
 const Testing = () => {
     const { user } = useSelector((state) => state.auth);
     const { message } = useSelector(state => state.message);
@@ -32,7 +33,6 @@ const Testing = () => {
             console.log(res);
             dispatch(setUserDoggydex(res));
         });
-
     }
 
     const onSubmit = (e) => {
@@ -41,14 +41,15 @@ const Testing = () => {
         axios.post(`/api/userdoggydex/add`, {
             userid: user.userId,
             breedid: dogid,
-        })
+            })
             .then(
                 // res => console.log(res.msg)
             )
             .catch(
                 e => console.log(e)
-            );
+        );
     }
+
     return (
         <div>
             <Logo />

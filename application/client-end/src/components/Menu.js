@@ -24,7 +24,7 @@ const Menu = () => {
         "Upload Dog": "/",
         "Testing": "/testing",
     };
-    const { isDogUploaded } = useSelector(state => state.dogUploaded); //NOT WORKING, WHYYYYYYYYY
+    const { isDogUploaded } = useSelector(state => state.dogUploaded); //not working?
 
     const location = useLocation();
     const dispatch = useDispatch();
@@ -44,11 +44,7 @@ const Menu = () => {
     return (
         <>
             <MenuButton func={toggleMenu} contents={<FaBars />} />
-            <div
-                id="flyoutMenu"
-                className={visibility}
-            >
-
+            <div id="flyoutMenu" className={visibility} >
                 <MenuButton func={toggleMenu} contents={<FaRegWindowClose />} />
                 <Logo />
                 <div className="menuOrganization">

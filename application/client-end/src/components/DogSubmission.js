@@ -28,6 +28,8 @@ const DogSubmission = ({ setDogUploaded, setIsDogUploaded, getDogInfo }) => {
     try {
       const formData = new FormData();
       formData.append('image', photo);
+      console.log(photo);
+      //axios.get('http://localhost:8080/api/image/upload');
       axios.post('http://localhost:8080/api/image/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
