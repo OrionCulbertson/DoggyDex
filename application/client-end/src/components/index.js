@@ -15,3 +15,5 @@ export {default as PersonalDoggyDex} from "./PersonalDoggyDex";
 export {default as LearningModeDoggyDex} from "./LearningModeDoggyDex";
 export {default as DoggyDexToggle} from "./DoggyDexToggle";
 export {default as DogFoundCard} from "./DogFoundCard";
+export {default as DogFound} from "./DogFound";
+export {default as Testing} from "./Testing";

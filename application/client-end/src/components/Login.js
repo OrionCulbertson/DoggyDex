@@ -52,6 +52,7 @@ const LogIn = () => {
     return (
         <>
             
+            <Logo />
             <div className="contentContainer">
                 <form onSubmit={onSubmit}>
                     <div className="accountForm">

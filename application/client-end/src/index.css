@@ -124,11 +124,13 @@ table {
 
 /* Error styling */
 .validation-error {
+    text-align: center;
     background-color: #ff0000;
 }
 
 /* Success styling */
 .validation-success {
+    text-align: center;
     background-color: #00ff00;
 }
 

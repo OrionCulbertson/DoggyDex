@@ -1,7 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react'
+// //https://dev.to/m_adams1909/data-fetching-with-axios-in-react-made-simple-2jei
 import { useHistory } from 'react-router-dom';
-
-//https://dev.to/m_adams1909/data-fetching-with-axios-in-react-made-simple-2jei
 
 const DogInfo = ( dogs ) => {
     const dog = dogs.location.state.dogs;
@@ -31,7 +30,7 @@ const DogInfo = ( dogs ) => {
 // import { Button, DogFoundCard } from '.';
 // import { FaArrowLeft } from 'react-icons/fa';
 // import { Link } from 'react-router-dom';
-// //https://dev.to/m_adams1909/data-fetching-with-axios-in-react-made-simple-2jei
+//https://dev.to/m_adams1909/data-fetching-with-axios-in-react-made-simple-2jei
 
 
 // const DogInfo = ({dogUploaded, dogObject, setIsDogUploaded }) => {

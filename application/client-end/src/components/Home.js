@@ -4,7 +4,8 @@ import UploadDog from './UploadDog'
 
 const Home = () => {
     return (
-        <> 
+        <>
+            <Logo />
             <div className="contentContainer">
                 <UploadDog />
             </div>

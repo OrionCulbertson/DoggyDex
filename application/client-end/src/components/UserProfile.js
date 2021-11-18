@@ -61,8 +61,9 @@ const UserProfile = () => {
 
     return (
         <>
-            
 
+
+            <Logo />
             {isLoggedIn ?
                 <>
                     <div className="contentContainer">
@@ -99,7 +100,7 @@ const UserProfile = () => {
                 </>
 
                 :
-                
+
 
                 <>
                     <div className="contentContainer">
