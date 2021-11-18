@@ -7,7 +7,6 @@ import { useDispatch } from 'react-redux';
 import { FaTimesCircle } from 'react-icons/fa';
 
 const CreateAccount = () => {
-    
     const [name, setName] = useState("");
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
@@ -16,7 +15,6 @@ const CreateAccount = () => {
     const [successful, setSuccessful] = useState(false);
     const dispatch = useDispatch();
 
-    
     const onChangeName = (e) => {
         const name = e.target.value;
         setName(name);
@@ -36,7 +34,6 @@ const CreateAccount = () => {
         const password = e.target.value;
         setPassword(password);
     };
-    
 
     const onSubmit = async e => {
         e.preventDefault();
