@@ -7,16 +7,16 @@ import { useDispatch } from 'react-redux';
 import { FaTimesCircle } from 'react-icons/fa';
 
 const CreateAccount = () => {
-    /*
+    
     const [name, setName] = useState("");
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    */
+    
     const [successful, setSuccessful] = useState(false);
     const dispatch = useDispatch();
 
-    /*
+    
     const onChangeName = (e) => {
         const name = e.target.value;
         setName(name);
@@ -36,7 +36,7 @@ const CreateAccount = () => {
         const password = e.target.value;
         setPassword(password);
     };
-    */
+    
 
     const onSubmit = async e => {
         e.preventDefault();
@@ -99,11 +99,11 @@ const CreateAccount = () => {
             <div id="createAccountFormContainer" className="contentContainer">
                 <form name="createAccountForm" onSubmit={onSubmit}>
                     <div className="accountForm">
-                        <input className="loginField" type="text" placeholder="Name" /*onChange={onChangeName}*/ required />
-                        <input className="loginField" type="text" placeholder="Username" /*onChange={onChangeUsername}*/ required />
-                        <input className="loginField" type="email" placeholder="Email" name="email1" /*onChange={onChangeEmail}*/ required />
+                        <input className="loginField" type="text" placeholder="Name" onChange={onChangeName} required />
+                        <input className="loginField" type="text" placeholder="Username" onChange={onChangeUsername} required />
+                        <input className="loginField" type="email" placeholder="Email" name="email1" onChange={onChangeEmail} required />
                         <input className="loginField" type="email" placeholder="Verify Email" name="email2" onBlur={validateEmails} required />
-                        <input className="loginField" type="password" placeholder="Password" name="password1" /*onChange={onChangePassword}*/ required />
+                        <input className="loginField" type="password" placeholder="Password" name="password1" onChange={onChangePassword} required />
                         <input className="loginField" type="password" placeholder="Verify Password" name="password2" onBlur={validatePasswords} required />
                     </div>
                     <Button contents={<div>Create Account</div>} styleClass="stdButton" type="submit" />

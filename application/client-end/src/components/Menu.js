@@ -16,11 +16,13 @@ const Menu = () => {
         "User Profile",
         "DoggyDex",
         "Upload Dog",
+        "Testing"
     ];
     const menuLinks = {
         "User Profile": "/user-profile",
         "DoggyDex": "/doggydex",
         "Upload Dog": "/",
+        "Testing": "/testing",
     };
     const { isDogUploaded } = useSelector(state => state.dogUploaded); //NOT WORKING, WHYYYYYYYYY
 
@@ -46,7 +48,7 @@ const Menu = () => {
                 id="flyoutMenu"
                 className={visibility}
             >
-            
+
                 <MenuButton func={toggleMenu} contents={<FaRegWindowClose />} />
                 <Logo />
                 <div className="menuOrganization">
@@ -61,6 +63,9 @@ const Menu = () => {
                             />
                         </Link>))}
                 </div>
+                <footer>
+                    <Link to="/about" onClick={menuClick}>About the Devs</Link>
+                </footer>
             </div>
         </>
     )

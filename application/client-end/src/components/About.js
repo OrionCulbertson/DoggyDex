@@ -5,19 +5,10 @@ import { setMessage } from "../actions/message";
 import { setIsDogUploaded } from "../actions/dogUploaded";
 import DevCard from "./DevCard";
 import DoggDexTeam from '../resources/DoggyDexTeam.png'
-// import {orionPhoto} from "../devPhotos/orionSelfie.png";
-const About = () => {
-    // const { user: currentUser } = useSelector((state) => state.auth);
-    // const { message } = useSelector(state => state.message);
-    // const { isDogUploaded } = useSelector(state => state.dogUploaded); //NOT WORKING, WHYYYYYYYYY
-    // const dispatch = useDispatch();
-    // // const { isDogUploaded: isDogUploaded } = useSelector((state) => state.isDogUploaded);
-    // const check = () => {
-    //     // dispatch(setMessage("hello"))
-    //     // dispatch(setIsDogUploaded(!isDogUploaded));
-    //     console.log(JSON.parse(localStorage.getItem("user")));
-    // }
 
+
+
+const About = () => {
 
     const orion = {
         name: "Orion Culbertson",
@@ -50,24 +41,6 @@ const About = () => {
     };
 
     return (
-        // <div>
-        //     <Logo />
-        //     <h4>We are the DoggyDex Team!</h4>
-        //     <div>
-        //         {currentUser ? "logged in" : "not logged in"}
-        //     </div>
-        //     <div>
-        //         {message}
-        //     </div>
-        //     <div>
-
-        //         {isDogUploaded ? "dog is up" : "dog is not up"}
-        //     </div>
-        //     <button onClick={check}>check</button>
-        //     <div>
-        //         <Link to="/">Return to Home Screen</Link>
-        //     </div>
-        // </div>
         <div>
             <img src={DoggDexTeam} className="logo" alt="DoggyDex Team Logo" />
             <div className="devContainer">
