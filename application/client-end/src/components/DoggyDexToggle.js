@@ -14,7 +14,7 @@ const DoggyDexToggle = ({ dogData }) => {
         
         <div>
             <div>
-                {isChecked ? <PersonalDoggyDex/> : <LearningModeDoggyDex dogData={dogData}/>}
+                {isChecked ? <PersonalDoggyDex dogData={dogData}/> : <LearningModeDoggyDex dogData={dogData}/>}
             </div>
             <div className="contentContainer">
                 <input
