@@ -12,7 +12,7 @@ const LearningModeDoggyDex = ({ dogData }) => {
         <div className ="contentContainer">
                  {dogData &&
                 dogData.dogs &&
-                dogData.dogs.map(dogs => <button id='dogs' onClick={() => handleClick(dogs)}>{dogs.dogbreed}</button>)}
+                dogData.dogs.map(dogs => <button id='dogs' onClick={() => handleClick(dogs)}>{dogs.dogbreed}<img className="dogImg" src={dogs.img}></img></button>)}
         </div>
     )
 }

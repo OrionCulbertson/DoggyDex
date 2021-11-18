@@ -16,14 +16,17 @@ const DoggyDexToggle = ({ dogData }) => {
             <div>
                 {isChecked ? <PersonalDoggyDex dogData={dogData}/> : <LearningModeDoggyDex dogData={dogData}/>}
             </div>
-            <div className="contentContainer">
+            <div className="contentContainer" id="toggle-dex">
+
+            {isChecked ? "Switch to Learning Mode" : "Switch to Personal Mode"}
                 <input
                     
                     type="checkbox"
                     checked={isChecked}
                     onChange={handleChange}
+                    
                 />
-                {isChecked ? "Switch to Learning Mode" : "Switch to Personal Mode"}
+                
             </div>
           
         </div>

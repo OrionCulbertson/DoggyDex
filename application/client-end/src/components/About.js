@@ -49,7 +49,7 @@ const About = () => {
     }
     return (
         <div>
-            <Logo />
+           
             <h4>We are the DoggyDex Team!</h4>
             <div>
                 {user ? "logged in" : "not logged in"}
