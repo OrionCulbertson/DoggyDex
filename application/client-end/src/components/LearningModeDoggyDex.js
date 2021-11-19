@@ -16,8 +16,8 @@ const LearningModeDoggyDex = ({ dogData }) => {
                 {dogData &&
                     dogData.dogs &&
                     dogData.dogs.map(dogs => <button id='dogs' onClick={() => handleClick(dogs)}>{dogs.dogbreed}</button>)}
-//from prev branch
-//dogData.dogs.map(dogs => <button id='dogs' onClick={() => handleClick(dogs)}>{dogs.dogbreed}<img className="dogImg" src={dogs.img}></img></button>)}
+{/* from prev branch
+                dogData.dogs.map(dogs => <button id='dogs' onClick={() => handleClick(dogs)}>{dogs.dogbreed}<img className="dogImg" src={dogs.img}></img></button>)} */}
             </div>
         </>
     )
