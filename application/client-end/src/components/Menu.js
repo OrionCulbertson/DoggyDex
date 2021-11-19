@@ -1,44 +1,70 @@
-import React from 'react';
-import { Media } from 'reactstrap';
-//import './media.css';
+// https://www.kirupa.com/react/smooth_sliding_menu_react_motion.htm
 
-class Menu extends React.Component {
-	constructor(props){
-		super(props);	
-		this.state = {};
-	}
-	render(){
-		const menu = this.props.person.map((person) => {
-			return(
-				<div key={person.id} id="unit" className="col-12 mt-5">					
-					<Media tag="li">
-						<Media left>
-							<Media object src={person.image} alt={person.name} />
-						</Media>
-						<Media body className="ml-3">
-							<Media heading><strong>{person.name}</strong></Media>
-							<div><strong>Country of origin - </strong>{person.country}</div>
-							<div><strong>About: </strong>{person.description}</div>
-							<div><strong>Info source </strong>- {person.source}</div>
-						</Media>
-					</Media>
-				</div>
-			);
-		});
-		
-		return(
-			<div className="container">
-				<div className="row">
-					<Media list>
-						{menu}
-					</Media>
-				</div>
-			</div>
-		);
-	}
+import React, { useState } from 'react'
+import MenuButton from './MenuButton';
+import { FaBars, FaRegWindowClose } from 'react-icons/fa'
+import Button from './Button';
+import { Link, useLocation } from 'react-router-dom';
+import Logo from './Logo';
+import { useDispatch, useSelector } from 'react-redux';
+import { setIsDogUploaded } from '../actions/dogUploaded';
+
+const Menu = () => {
+    const [visibility, setVisibility] = useState("hide");
+    const [isVisible, setIsVisible] = useState(true)
+    const menuOptions = [
+        "User Profile",
+        "DoggyDex",
+        "Upload Dog",
+        "Testing"
+    ];
+    const menuLinks = {
+        "User Profile": "/user-profile",
+        "DoggyDex": "/doggydex",
+        "Upload Dog": "/",
+        "Testing": "/testing",
+    };
+    const { isDogUploaded } = useSelector(state => state.dogUploaded); //not working?
+
+    const location = useLocation();
+    const dispatch = useDispatch();
+
+    const toggleMenu = () => {
+        setIsVisible(!isVisible);
+        setVisibility((isVisible) ? "show" : "hide");
+        // console.log(isVisible);
+        // console.log(location.pathname);
+    }
+
+    const menuClick = () => {
+        toggleMenu();
+        dispatch(setIsDogUploaded(false));
+    }
+
+    return (
+        <>
+            <MenuButton func={toggleMenu} contents={<FaBars />} />
+            <div id="flyoutMenu" className={visibility} >
+                <MenuButton func={toggleMenu} contents={<FaRegWindowClose />} />
+                <Logo />
+                <div className="menuOrganization">
+                    {menuOptions.map((option, index) => (
+                        <Link to={menuLinks[option]} className="menuLink" onClick={menuClick}>
+                            <Button
+                                key={index}
+                                contents={option}
+                                // onClick={toggleMenu}
+                                styleClass="navButton"
+                                color={(location.pathname === menuLinks[option]) ? "#FFED86" : "#F7CAD0"}
+                            />
+                        </Link>))}
+                </div>
+                <footer>
+                    <Link to="/about" onClick={menuClick}>About the Devs</Link>
+                </footer>
+            </div>
+        </>
+    )
 }
-
-// 'Keys' - It helps identify which items have changed, are added or removed.
-
 
 export default Menu;

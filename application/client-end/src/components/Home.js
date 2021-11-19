@@ -1,17 +1,16 @@
-// Home.js
-import React from "react";
-import '../App.css';
-
+import React from 'react'
+import Logo from './Logo'
+import UploadDog from './UploadDog'
 
 const Home = () => {
-  return (
-    <div className="homePageBody">
+    return (
+        <>
+            <Logo />
+            <div className="contentContainer">
+                <UploadDog />
+            </div>
+        </>
+    )
+}
 
-    <section className="Home text-center" >
-      <h1 >This is the homepage</h1>
-    </section>
-    </div>
-  );
-};
-
-export default Home;
+export default Home
