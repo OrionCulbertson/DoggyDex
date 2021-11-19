@@ -3,7 +3,6 @@ import { FaArrowUp, FaPaw } from "react-icons/fa";
 import Button from './Button';
 import axios from 'axios';
 
-
 const DogSubmission = ({ setDogUploaded, setIsDogUploaded, getDogInfo }) => {
   const [file, setFile] = useState("");
   const [fileName, setFileName] = useState("Choose File");
@@ -28,6 +27,8 @@ const DogSubmission = ({ setDogUploaded, setIsDogUploaded, getDogInfo }) => {
     try {
       const formData = new FormData();
       formData.append('image', photo);
+      console.log(photo);
+      //axios.get('http://localhost:8080/api/image/upload');
       axios.post('http://localhost:8080/api/image/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
@@ -37,12 +38,10 @@ const DogSubmission = ({ setDogUploaded, setIsDogUploaded, getDogInfo }) => {
           // setImgFile('http://localhost:8080/api/image/id/' + res.data._id);
           // console.log(imgFile);
 
-
           //Get dog ID from returned dog breed
           //Get whole dog w/ getDogInfo
           //Log Breed ID in user's Doggydex
           //Refresh loaded doggydex
-
 
           // FOR TESTING
           // const {dog_id, confidenceScore } = res.data;

@@ -7,7 +7,6 @@ import { useDispatch } from 'react-redux';
 import { FaTimesCircle } from 'react-icons/fa';
 
 const CreateAccount = () => {
-    
     const [name, setName] = useState("");
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
@@ -16,7 +15,6 @@ const CreateAccount = () => {
     const [successful, setSuccessful] = useState(false);
     const dispatch = useDispatch();
 
-    
     const onChangeName = (e) => {
         const name = e.target.value;
         setName(name);
@@ -36,7 +34,6 @@ const CreateAccount = () => {
         const password = e.target.value;
         setPassword(password);
     };
-    
 
     const onSubmit = async e => {
         e.preventDefault();
@@ -65,10 +62,10 @@ const CreateAccount = () => {
         validationElement.className = 'validation-image';
 
         if (email1 !== email2) {
-            validationElement.style.display = 'flex';
+            validationElement.style.display = 'block';
             validationElement.className = 'validation-error';
         } else {
-            validationElement.style.display = 'flex';
+            validationElement.style.display = 'block';
             validationElement.className = 'validation-success';
         }
     }
@@ -84,10 +81,10 @@ const CreateAccount = () => {
         validationElement.className = 'validation-image';
 
         if (password1 !== password2) {
-            validationElement.style.display = 'flex';
+            validationElement.style.display = 'block';
             validationElement.className = 'validation-error';
         } else {
-            validationElement.style.display = 'flex';
+            validationElement.style.display = 'block';
             validationElement.className = 'validation-success';
         }
     }
@@ -114,8 +111,8 @@ const CreateAccount = () => {
                     Already have an account?
                 </Link>
             </div>
-            <div id="emailValidation" class="validation-image">Email Test div</div>
-            <div id="passwordValidation" class="validation-image">Password Test div</div>
+            <div id="emailValidation" class="validation-image">Emails</div>
+            <div id="passwordValidation" class="validation-image">Passwords</div>
         </>
     )
 }

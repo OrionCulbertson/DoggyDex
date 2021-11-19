@@ -7,9 +7,9 @@ import axios from "axios";
 import { useState } from "react";
 import authHeader from "../services/auth-header";
 import userService from "../services/user.service";
-import { setUserDoggydex } from "../actions/userDoggyDex";
 
-const Testing = () => {
+
+const About = () => {
     const { user } = useSelector((state) => state.auth);
     const { message } = useSelector(state => state.message);
     const { isDogUploaded } = useSelector(state => state.dogUploaded);
@@ -18,7 +18,7 @@ const Testing = () => {
     const dispatch = useDispatch();
     // const { isDogUploaded: isDogUploaded } = useSelector((state) => state.isDogUploaded);
 
-    const { userDoggyDex } = useSelector(state => state.userDoggyDex);
+    const {userDoggyDex} = useSelector(state => state.userDoggyDex);
     const check = () => {
         // dispatch(setMessage("hello"))
         // dispatch(setIsDogUploaded(!isDogUploaded));
@@ -29,10 +29,8 @@ const Testing = () => {
     const getUserDogs = () => {
         // console.log(userDoggyDex);
         // userService.getUserDoggyDex().then(res => console.log);
-        userService.getUserDoggyDex().then(res => {
-            console.log(res);
-            dispatch(setUserDoggydex(res));
-        });
+        userService.getUserDoggyDex().then(res => console.log(res));
+        userService.dog();
     }
 
     const onSubmit = (e) => {
@@ -41,18 +39,17 @@ const Testing = () => {
         axios.post(`/api/userdoggydex/add`, {
             userid: user.userId,
             breedid: dogid,
-            })
-            .then(
-                // res => console.log(res.msg)
-            )
-            .catch(
-                e => console.log(e)
+        })
+        .then(
+            // res => console.log(res.msg)
+        )
+        .catch(
+            e => console.log(e)
         );
     }
-
     return (
         <div>
-            <Logo />
+           
             <h4>We are the DoggyDex Team!</h4>
             <div>
                 {user ? "logged in" : "not logged in"}
@@ -70,7 +67,7 @@ const Testing = () => {
                     <form onSubmit={onSubmit}>
                         <div>
                             {/* <input type="number" placeholder="user id" onChange={setUserid} /> */}
-                            <input type="number" placeholder="dog breed id" onChange={(val) => { setDogid(val.target.value) }} />
+                            <input type="number" placeholder="dog breed id" onChange={(val) => {setDogid(val.target.value)}} />
                             <input type="submit" value="Add" />
                         </div>
                     </form>
@@ -84,4 +81,4 @@ const Testing = () => {
     )
 }
 
-export default Testing
+export default About

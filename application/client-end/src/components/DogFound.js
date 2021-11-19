@@ -29,4 +29,3 @@ const DogFound = ({dogUploaded, dogObject, setIsDogUploaded }) => {
 }
 
 export default DogFound;
-
