@@ -22,7 +22,7 @@ router.post('/upload', upload.single('image'), async (req, res) => {
     try {
         const photo = new Photo(req.body);
         const file = req.file.buffer;
-        console.log(file);
+        // console.log(file);
         photo.photo = file;
         await photo.save();// Image is sent to MongoDB
 
