@@ -2,14 +2,15 @@ import React, {useState} from 'react'
 // //https://dev.to/m_adams1909/data-fetching-with-axios-in-react-made-simple-2jei
 import { useHistory } from 'react-router-dom';
 
-const DogInfo = ( dogs ) => {
-    const dog = dogs.location.state.dogs;
+const DogInfo = ( props ) => {
+    const dog = props.location.state.dogs;
     const history = useHistory();
     const handleClick = () => {
         history.goBack();
     }
     return (
         <div>
+
             <div className="contentContainer">
                 <h1>Dog:</h1>
                 <h1>{dog.dogbreed}</h1>
