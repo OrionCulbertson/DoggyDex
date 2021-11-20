@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Provider, useSelector } from "react-redux";
 import store from "./store";
 
-import { About, Menu, Home, UserProfile, CreateAccount, LogIn, DoggyDex, DogInfo, DogFoundCard } from "./components"
+import { About, Menu, Home, UserProfile, CreateAccount, LogIn, DoggyDex, DogInfo, DogFoundCard, Tester } from "./components"
 import { Logo } from './components';
 
 function App() {
@@ -19,9 +19,10 @@ function App() {
           <Route path="/create-account" component={CreateAccount} />
           <Route path="/doggydex" component={DoggyDex} />
           <Route path="/doginfo/" component={DogInfo} />
-          <footer>
+          <Route path="/tester" component={Tester} />
+          {/* <footer>
             <Link to="/about">About the Devs</Link>
-          </footer>
+          </footer> */}
         </div>
       </Router>
     </Provider>
