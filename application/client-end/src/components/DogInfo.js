@@ -11,10 +11,12 @@ const DogInfo = ( dogs ) => {
     }
     return (
         <div>
-            <div className="contentContainer">
-                <h1>Dog:</h1>
-                <h1>{dog.dogbreed}</h1>
-                <img src={dog.img}></img>
+            <div className="dogInfo-container">
+
+                
+                <img src={dog.img} className="dogInfo-image"></img>
+                <h1 className="dogInfo-breed">{dog.dogbreed}</h1>
+                <hr className="dogInfo-line"/>
                 <p>{dog.description}</p>
             </div>
             <div className="contentContainer" id="dog-info-bttn-container">

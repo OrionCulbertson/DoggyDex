@@ -90,7 +90,7 @@ const UserProfile = () => {
                         <ProfileLine title="Name" contents={user.name} />
                         <ProfileLine title="Username" contents={decodedToken.userName} />
                         <ProfileLine title="Email" contents={user.email} />
-                        <ProfileLine title="Dog Breeds Found" contents={userDoggyDex ? userDoggyDex.length : 0} />
+                        <ProfileLine title="Dog Breeds Found" contents={decodedToken ? decodedToken.dogbreedIDs.length : 0} />
                     </div>
                     <Link id="logOutButton" className="menuLink" to="/" onClick={signOut}>
                         <Button contents={<div>Log Out</div>} id="logOutButton" styleClass="stdButton" />
