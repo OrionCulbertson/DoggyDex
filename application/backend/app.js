@@ -26,7 +26,7 @@ app.use(cors({ origin: true, credentials: true }));
 app.get('/', (req, res) => {
     console.log("Welcome to the home page!");
     console.log(req.body);
-    let data = "DATA TO SEND"
+    let data = "Test data to send"
     res.send(data);
 })
 

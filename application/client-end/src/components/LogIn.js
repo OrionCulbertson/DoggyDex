@@ -13,7 +13,6 @@ const LogIn = () => {
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
 
-
     const onChangeEmail = (e) => {
         const email = e.target.value;
         setEmail(email);
@@ -23,8 +22,6 @@ const LogIn = () => {
         const password = e.target.value;
         setPassword(password);
     };
-
-   
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -36,13 +33,11 @@ const LogIn = () => {
         dispatch(login(email, password))
             .then(() => {
 
-                
             })
             .catch((err) => {
                 // setLoading(false);
                 console.log(err.message);
             });
-
     }
 
     if (isLoggedIn) {
@@ -51,7 +46,6 @@ const LogIn = () => {
 
     return (
         <>
-            
             <Logo />
             <div className="contentContainer">
                 <form onSubmit={onSubmit}>
