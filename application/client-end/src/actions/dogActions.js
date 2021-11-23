@@ -10,7 +10,7 @@ export const fetchDogs = () => {
     return (dispatch) => {
         dispatch(fetchDogsRequest);
         axios
-            .get('http://localhost:8080/api/dogbreed')
+            .get('/api/dogbreed')
             .then(response => {
                 const dogs = response.data;
                 dispatch(fetchDogsSuccess(dogs));
