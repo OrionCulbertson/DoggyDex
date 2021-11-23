@@ -4,14 +4,9 @@ import { fetchDogs } from '../actions/dogActions';
 import { DoggyDexToggle, LearningModeDoggyDex } from '../components'
 
 
-function DoggyDex({ dogData, fetchDogs }) { 
-    
+function DoggyDex({ dogData, fetchDogs }) {
     const {isLoggedIn} = useSelector(state => state.auth)
-
-
-
     useEffect(() => {
-       
         fetchDogs()
     }, [] );
 
@@ -21,7 +16,7 @@ function DoggyDex({ dogData, fetchDogs }) {
        
     ) : dogData.error ? (
         <h2>{dogData.error}</h2>
-    ): isLoggedIn ?(<DoggyDexToggle dogData={dogData}/>) : <LearningModeDoggyDex dogData={dogData}/>
+    ): isLoggedIn ?(<DoggyDexToggle dogData={dogData}/>) : (<LearningModeDoggyDex dogData={dogData}/>)
 
 }
 
