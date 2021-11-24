@@ -82,6 +82,18 @@ input[type="file"] {
     /* width: 90%; */
 }
 
+.profileLine {
+    width: 100%;
+    display: flex;
+    background-color: #ECECEC;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 18px;
+    flex-wrap: wrap;
+}
+
 table {
     border-collapse: separate;
     border-spacing: 0 15px;
@@ -89,7 +101,7 @@ table {
 }
 
 .userProfileTableLine {
-    border-radius: 5px;
+    border-radius: 25px;
 }
 
 .userProfileTableLine td {
@@ -112,11 +124,13 @@ table {
 
 /* Error styling */
 .validation-error {
+    text-align: center;
     background-color: #ff0000;
 }
 
 /* Success styling */
 .validation-success {
+    text-align: center;
     background-color: #00ff00;
 }
 
@@ -244,6 +258,59 @@ a {
     height: 100vh;
 }
 
+
+
+#toggle-dex{
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 20px;
+    
+}
+
+.dogImg{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    padding: 5px;
+    
+}
+
+#dogs{
+    border-radius: 50px;
+    background-color: #FFED86;
+    text-align: left;
+    font-size: 20px;
+    font-weight: 1000;
+    font-style:normal;
+    color: #770024;
+    
+}
+
+#dogs-unknown{
+    border-radius: 50px;
+    background-color: #FF85A1;
+    text-align: left;
+    font-size: 20px;
+    font-weight: 1000;
+    font-style:normal;
+    color: #770024;
+}
+
+.dog-info-bttn{
+    border-radius: 50px;
+    background-color: #FFED86;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 1000;
+    font-style:normal;
+    color: #770024;
+}
+
+#dog-info-bttn-container{
+    margin-top: 10px;
+}
 .devPhoto {
     display: block;
     /* height: 50%; */
@@ -277,4 +344,11 @@ a {
     gap: 15px;
     flex-wrap: wrap;
     align-items: flex-start;
+}
+
+.uploadError {
+    width: 100%;
+    background-color: #FF477E;
+    text-align: center;
+    border-radius: 15px;
 }
