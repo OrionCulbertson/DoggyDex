@@ -15,7 +15,7 @@ const upload = multer({
     }
     cb(undefined, true); // continue with upload
   }
-});
+});e
 
 // From front-end, route: api/image/upload
 router.post('/upload', upload.single('image'), async (req, res) => {
@@ -79,10 +79,11 @@ router.post('/upload', upload.single('image'), async (req, res) => {
 //Tester GET function to run python script 
 router.get('/', (req, res) => {
     let photo = "Border Collie";
-    let confidenceScore ="0.9";
+    let confidenceScore = "0.9";
+    let scriptToOpen = "photoTest.py"
     let JSONData = [];
     // spawn new child process to call the python script
-    const python = spawn('python', ['script.py', breedName, confidenceScore]);
+    const python = spawn('python', [scriptToOpen, breedName, confidenceScore]);
 
     // collect data from script
     python.stdout.on('data', function (data) {
