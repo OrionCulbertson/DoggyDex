@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 // //https://dev.to/m_adams1909/data-fetching-with-axios-in-react-made-simple-2jei
 import { useHistory } from 'react-router-dom';
+import Logo from './Logo'
 
 const DogInfo = ( props ) => {
     const dog = props.location.state.dogs;
@@ -10,6 +11,7 @@ const DogInfo = ( props ) => {
     }
     return (
         <div>
+            <Logo/>
             <div className="dogInfo-container">
 
                 
