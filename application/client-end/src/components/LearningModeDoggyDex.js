@@ -1,7 +1,12 @@
-import React from 'react'
-import {  useHistory } from 'react-router-dom'; 
+import React from 'react';
+import { useHistory } from 'react-router-dom';
 
 const LearningModeDoggyDex = ({ dogData }) => {
+  const history = useHistory();
+  const handleClick = (dogs) => {
+    console.log('inside lmdd', dogs);
+    history.push('/doginfo', { dogs: dogs });
+  };
 
     const history = useHistory();
     const handleClick = (dogs) => {
