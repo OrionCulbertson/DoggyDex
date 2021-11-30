@@ -96,12 +96,12 @@ const CreateAccount = () => {
             <div id="createAccountFormContainer" className="contentContainer">
                 <form name="createAccountForm" onSubmit={onSubmit}>
                     <div className="accountForm">
-                        <input className="loginField" type="text" placeholder="Name" onChange={onChangeName} required />
-                        <input className="loginField" type="text" placeholder="Username" onChange={onChangeUsername} required />
-                        <input className="loginField" type="email" placeholder="Email" name="email1" onChange={onChangeEmail} required />
-                        <input className="loginField" type="email" placeholder="Verify Email" name="email2" onBlur={validateEmails} required />
-                        <input className="loginField" type="password" placeholder="Password" name="password1" onChange={onChangePassword} required />
-                        <input className="loginField" type="password" placeholder="Verify Password" name="password2" onBlur={validatePasswords} required />
+                    <input className="loginField" id="input-name"type="text" placeholder="Name" onChange={onChangeName} required />
+                        <input className="loginField" id="input-username" type="text" placeholder="Username" onChange={onChangeUsername} required />
+                        <input className="loginField" id="input-email" type="email" placeholder="Email" name="email1" onChange={onChangeEmail} required />
+                        <input className="loginField" id="confirm-email" type="email" placeholder="Verify Email" name="email2" onBlur={validateEmails} required />
+                        <input className="loginField" id="input-password" type="password" placeholder="Password" name="password1" onChange={onChangePassword} required />
+                        <input className="loginField" id="confirm-passwordcons" type="password" placeholder="Verify Password" name="password2" onBlur={validatePasswords} required />
                     </div>
                     <Button contents={<div>Create Account</div>} styleClass="stdButton" type="submit" />
                 </form>
@@ -111,8 +111,8 @@ const CreateAccount = () => {
                     Already have an account?
                 </Link>
             </div>
-            <div id="emailValidation" class="validation-image">Emails</div>
-            <div id="passwordValidation" class="validation-image">Passwords</div>
+            <div id="emailValidation" className="validation-image">Emails</div>
+            <div id="passwordValidation" className="validation-image">Passwords</div>
         </>
     )
 }
