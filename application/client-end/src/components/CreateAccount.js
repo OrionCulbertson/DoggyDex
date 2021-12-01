@@ -87,6 +87,7 @@ const CreateAccount = () => {
       validationElement.style.display = 'block';
       validationElement.className = 'validation-success';
     }
+
   };
   //consolidate the two above functions
 

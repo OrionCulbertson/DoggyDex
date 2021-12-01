@@ -3,6 +3,7 @@ import {  useHistory } from 'react-router-dom';
 import image from '../resources/qm.png'
 import { useSelector } from 'react-redux';
 import jwt_decode from 'jwt-decode'
+import  Logo  from './Logo'
 
 
 const PersonalDoggyDex = ({ dogData }) => {
@@ -25,18 +26,18 @@ const PersonalDoggyDex = ({ dogData }) => {
 
     }
 
-   
-    const id = ['1000', '1010', '1045', '1065'];
     return (
-        
-             <div className ="contentContainer">
-                 {dogData &&
-                dogData.dogs &&
-                dogData.dogs.map(
-                    dogs => dogIDs.includes(dogs.breedid) ?
-                    <button id='dogs'  key={dogs.breed} onClick={() => handleClick(dogs, true )}>{dogs.dogbreed}<img className="dogImg" src={dogs.img}></img></button>
-                    : <button id='dogs-unknown' key={dogs.breed} onClick={() => handleClick(dogs, false)}>Unknown<img className="dogImg" src={image} ></img></button>)}
-            </div>
+            <>
+                <Logo/>
+                <div className ="doggyDex-container">
+                    {dogData &&
+                        dogData.dogs &&
+                        dogData.dogs.map(
+                        dogs => dogIDs.includes(dogs.breedid) ?
+                        <button id='dogs'  key={dogs.breed} onClick={() => handleClick(dogs, true )}><text className="doggyDex-text">{dogs.dogbreed}</text><img className="dogImg" src={dogs.img}></img></button>
+                        : <button id='dogs-unknown' key={dogs.breed} onClick={() => handleClick(dogs, false)}><text className="doggyDex-text">Unknown</text><img className="dogImg" src={image} ></img></button>)}
+                </div>
+            </>
             
         
     )

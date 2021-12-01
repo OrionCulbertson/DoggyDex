@@ -57,6 +57,7 @@ const UserProfile = () => {
       <Logo />
       {isLoggedIn ? (
         <>
+
           <div className="contentContainer">
             <ProfileLine title="Name" contents={user.name} />
             <ProfileLine title="Username" contents={decodedToken.userName} />
