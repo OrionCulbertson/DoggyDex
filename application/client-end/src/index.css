@@ -404,3 +404,10 @@ hr{
     flex-wrap: wrap;
     align-items: flex-start;
 }
+
+.uploadError {
+    width: 100%;
+    background-color: #FF477E;
+    text-align: center;
+    border-radius: 15px;
+}
