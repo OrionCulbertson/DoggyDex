@@ -3,69 +3,69 @@ const multer = require('multer'); // Middleware to upload img files
 const Photo = require('../../models/Photo');
 const router = express.Router();
 const {spawn} = require('child_process');
+const fs = require('fs')
 
 //========= Upload, store, retrieve and delete an image ==============
-const upload = multer({
-  limits: {
-    fileSize: 1024 * 1024 * 5 // max file size: ~ 5.3MB = 5.2m bytes
-  },
-  fileFilter(req, file, cb) {
-    if (!file.originalname.match(/\.(jpeg|jpg|png)$/)) { // The three img-file extensions that can be handled
-      cb(new Error('only upload files with jpg, jpeg or png format.'));
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, './ml_files')
+    },
+    filename: function (req, file, cb) {
+      const uniquePrefix = Date.now() + '-' + Math.round(Math.random() * 1E9)
+      cb(null, uniquePrefix + '-' + file.originalname)
     }
-    cb(undefined, true); // continue with upload
-  }
-});e
+})
 
-// From front-end, route: api/image/upload
-router.post('/upload', upload.single('image'), async (req, res) => {
+const upload = multer({
+    storage: storage,
+    limits: {
+        fileSize: 1024 * 1024 * 5 // max file size: ~ 5.3MB = 5.2m bytes
+    },
+    fileFilter(req, file, cb) {
+        if (!file.originalname.match(/\.(jpeg|jpg|png)$/)) { // The three image file extensions that can be handled
+            cb(new Error('only upload files with jpg, jpeg or png format.'));
+        }
+        cb(undefined, true); // continue with upload
+    }
+})
+
+// From front-end, route: api/image/upload.
+/*
+In: Send photo filepath to ML
+Out: ML returns JSON:
+{
+    "humanPresent": "0"
+    "breedName": "Collie",
+    "confidenceScore": ".9"
+}
+If no dog or human detected, empty JSON is returned
+*/
+router.post('/upload', upload.single('image'), async (req, res, next) => {
     try {
-        const photo = new Photo(req.body);
-        const file = req.file.buffer;
-        console.log(file);
-        photo.photo = file;
-        await photo.save();// Image is sent to MongoDB
+        let scriptToOpen = "./ml_files/mlScript.py";
+        let JSONData = [];
+        let photoFile = req.file.path;
 
-        /*
-        let resData = [];
+        // spawn new child process to call the python script
+        const python = spawn('python', [scriptToOpen, photoFile]);
 
-        const python = spawn('python', ['photoTest.py', file]);
-
-        // collect data from script
+        // collect data from script output
         python.stdout.on('data', function (data) {
-            console.log('Pipe data from python script ...')
-            //dataToSend = data.toString();
-            resData.push(data)
+            JSONData.push(data)
         })
 
         // in close event we are sure that stream is from child process is closed
         python.on('close', (code) => {
-            console.log(`child process close all stdio with code ${code}`);
-            console.log("Body of HTTP Response:\n" + resData);
             // send data to browser
-            //res.send(dataToSend);
-            res.send(resData.join(''))
+            res.status(201).send(JSONData.join(''))
+            // Head to function to delete temp photo file, but only after python is finished
+            next();
         })
-        */
-
-        res.status(201).send({ _id: photo._id }); // Returns Photo obj back to caller.
-        
-
-        /*
-        Send photo link to ML
-        ML returns JSON:
-            {
-                "breedName": "Collie", 
-                "confScore": .9
-            }
-        Return this ^
-        */
-        
     } catch (error) {
         res.status(500).send({
             upload_error: 'Error while uploading file...Try again later.'
             });
-        }
+    }
     },
     (error, req, res, next) => {
         if (error) {
@@ -76,29 +76,15 @@ router.post('/upload', upload.single('image'), async (req, res) => {
     }
 );
 
-//Tester GET function to run python script 
-router.get('/', (req, res) => {
-    let photo = "Border Collie";
-    let confidenceScore = "0.9";
-    let scriptToOpen = "photoTest.py"
-    let JSONData = [];
-    // spawn new child process to call the python script
-    const python = spawn('python', [scriptToOpen, breedName, confidenceScore]);
+// Function to remove locally stored uploaded photo
+router.use(function(req, res) {
+    const path = req.file.path;
 
-    // collect data from script
-    python.stdout.on('data', function (data) {
-        console.log('Pipe data from python script ...')
-        //dataToSend = data.toString();
-        JSONData.push(data)
-    })
-
-    // in close event we are sure that stream is from child process is closed
-    python.on('close', (code) => {
-        console.log(`child process close all stdio with code ${code}`);
-        console.log("Body of HTTP Response:\n" + JSONData);
-        // send data to browser
-        //res.send(dataToSend);
-        res.send(JSONData.join(''))
+    fs.unlink(path, (err) => {
+        if (err) {
+            console.error(err);
+            return;
+        }
     })
 });
 
