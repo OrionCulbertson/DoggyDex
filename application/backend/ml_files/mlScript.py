@@ -104,7 +104,7 @@ def human_dog_breed(img_path):
     # case 1: if dog is detected in the image, identify breed
     if humanDetected or dog_detector(img_path):
         pred_arr = Resnet50_predict_breed_dev(img_path)
-        confidenceScore = np.argmax(pred_arr)
+        confidenceScore = np.clip(np.argmax(pred_arr), 40, 100)
         predictedDogBreed = dog_names[confidenceScore].replace("_", " ")
 
         #Creating JSON object in separate file mlReturnData.json
