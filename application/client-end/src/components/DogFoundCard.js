@@ -4,11 +4,6 @@ import { Button } from '.';
 import { FaArrowRight } from 'react-icons/fa';
 
 const DogFoundCard = ({ dogUploaded, dogObject, onClick }) => {
-    // const dogBreed = dogObject.dogbreed;
-    // const dogBreed = "German Shepherd";
-    //For testing, in implementation it'll be: dogObject.img
-    // const dogImage = "https://www.akc.org/wp-content/uploads/2017/11/German-Shepherd-on-White-00.jpg";
-
     return (
         <div>
             <img src={dogObject.img} alt={`${dogObject.dogBreed} Picture`} className="dogPreview" />

@@ -31,12 +31,12 @@ const upload = multer({
 
 // From front-end, route: api/image/upload.
 /*
-In: Send photo filepath to ML
-Out: ML returns JSON:
+In: Send filepath of temporary copy of uploaded photo to mlScript.py
+Out: ML returns JSON in HTTP response:
 {
-    "humanPresent": "0"
+    "humanPresent": "0",
     "breedName": "Collie",
-    "confidenceScore": ".9"
+    "confidenceScore": "90"
 }
 If no dog or human detected, empty JSON is returned
 */

@@ -1,11 +1,8 @@
-import React, { useState, useEffect } from 'react'
-import axios from "axios"
-import Button from './Button';
+import React, { useState } from 'react';
 import DogSubmission from './DogSubmission';
-import DogInfo from './DogInfo';
 import { useDispatch, useSelector } from 'react-redux';
 import { setIsDogUploaded } from '../actions/dogUploaded';
-import { DogFound, Logo } from '.';
+import { DogFound } from '.';
 
 const UploadDog = () => {
     const { isDogUploaded } = useSelector(state => state.dogUploaded);
@@ -31,8 +28,7 @@ const UploadDog = () => {
         setDogObject({
             dogID: dog_id,
             dogBreed: "German Shepherd",
-            img: "https://www.akc.org/wp-content/uploads/2017/11/German-Shepherd-on-White-00.jpg",
-
+            img: "https://www.akc.org/wp-content/uploads/2017/11/German-Shepherd-on-White-00.jpg"
         })
     }
 
@@ -40,7 +36,6 @@ const UploadDog = () => {
         <>
             {isDogUploaded ?
                 <DogFound dogUploaded={dogUploaded} dogObject={dogObject} setIsDogUploaded={dispatchDogUploaded} />
-
                 :
                 <DogSubmission setDogUploaded={setDogUploaded} setIsDogUploaded={dispatchDogUploaded} getDogInfo={getDogInfo} />
             }
