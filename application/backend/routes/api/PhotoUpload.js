@@ -1,3 +1,4 @@
+// routes/api/Photo.js
 const express = require('express');
 const multer = require('multer'); // Middleware to upload img files
 const Photo = require('../../models/Photo');

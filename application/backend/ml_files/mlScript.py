@@ -109,11 +109,11 @@ def human_dog_breed(img_path):
 
         #Creating JSON object in separate file mlReturnData.json
         f = open(returnDataFilePath, "w")
-        f.write("{\n\t\"humanPresent\": \"")
+        f.write("{\n\t\"humanPresent\": ")
         if (humanDetected):
-            f.write("1\",\n")
+            f.write("1,\n")
         else:
-            f.write("0\",\n")
+            f.write("0,\n")
         f.write("\t\"breedName\": \"" + predictedDogBreed + "\",\n\t\"confidenceScore\": " + str(confidenceScore) + "\n}\n")
         f.close()
 

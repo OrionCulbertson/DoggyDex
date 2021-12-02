@@ -2,7 +2,7 @@ import React from 'react'
 // //https://dev.to/m_adams1909/data-fetching-with-axios-in-react-made-simple-2jei
 import { useHistory } from 'react-router-dom';
 
-const DogInfo = ( dogs ) => {
+const DogInfo = (dogs) => {
     const dog = dogs.location.state.dogs;
     const history = useHistory();
     const handleClick = () => {
@@ -18,7 +18,7 @@ const DogInfo = ( dogs ) => {
             </div>
             <div className="contentContainer" id="dog-info-bttn-container">
                 <button className="dog-info-bttn" onClick={() => handleClick()}>
-                    GO BACK
+                    Go Back
                 </button>
             </div>
         </div>

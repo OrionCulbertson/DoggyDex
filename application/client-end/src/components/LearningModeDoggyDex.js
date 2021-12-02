@@ -5,8 +5,8 @@ import { Logo } from '.';
 const LearningModeDoggyDex = ({ dogData }) => {
     const history = useHistory();
     const handleClick = (dogs) => {
-      console.log("inside lmdd", dogs)
-      history.push('/doginfo', { dog: dogs });
+        console.log("inside lmdd", dogs)
+        history.push('/doginfo', { dog: dogs });
     }
 
     return (

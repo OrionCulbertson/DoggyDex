@@ -6,8 +6,8 @@ import { DogFound } from '.';
 
 const UploadDog = () => {
     const { isDogUploaded } = useSelector(state => state.dogUploaded);
-    const [dogUploaded, setDogUploaded] = useState({}); //Contains Dog ID, Confidence Score
-    const [dogObject, setDogObject] = useState({}); //Contains Entire Dog Object
+    const [dogUploaded, setDogUploaded] = useState({}); // Contains Dog ID, Confidence Score
+    const [dogObject, setDogObject] = useState({}); // Contains Entire Dog Object
     const dispatch = useDispatch();
 
     const dispatchDogUploaded = (value) => {
@@ -15,6 +15,13 @@ const UploadDog = () => {
     }
 
     const getDogInfo = (dog_id) => {
+        axios.get()
+        .then( (res) => {
+            // something
+        })
+        .catch(error => console.log(`Error: ${error}`))
+        
+        
         //TODO: DEFINE IT
         // axios.get(`/dog-info/${dog_id}`)
         //     .then( (response) => {
