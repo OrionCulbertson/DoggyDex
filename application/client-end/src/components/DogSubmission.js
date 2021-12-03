@@ -40,6 +40,9 @@ const DogSubmission = ({ setDogUploaded, setIsDogUploaded, getDogInfo }) => {
                     // mlJSONResponse.breedName;
                     // mlJSONResponse.humanPresent;
                     // mlJSONResponse.confidenceScore;
+
+                    const breedName = mlJSONResponse.breedName;
+                    const confidenceScore = mlJSONResponse.confidenceScore;
                     
                     /* TODO
                         Get dog ID from returned dog breed
@@ -50,14 +53,14 @@ const DogSubmission = ({ setDogUploaded, setIsDogUploaded, getDogInfo }) => {
                     // FOR TESTING
                     // const {dog_id, confidenceScore } = res.data;
                     // const {dog_id, confidenceScore }
-                    const dog_id = 20;
-                    const confidenceScore = 90;
+                    //const dog_id = 20;
+                    //const confidenceScore = 90;
                     // console.log(dog_id);
                     // setUploadedFile({ fileName, filePath, dog_id }); // May not need this
                     // setMessage("File Uploaded");
-                    setDogUploaded({ dog_id, confidenceScore });
+                    setDogUploaded({ breedName, confidenceScore });
                     // setDogUploaded({dog_id: 10, confidenceScore: 90}); // Testing information
-                    getDogInfo(dog_id); // Loads dog object based off dog breed
+                    getDogInfo(breedName); // Loads dog object based off dog breed response
                     setIsDogUploaded(true); // Updates the page
                     setFile({}); // Reset File Upload info
                     setFileName(""); // Reset File Name info

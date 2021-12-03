@@ -11,7 +11,7 @@ const DogFound = ({dogUploaded, dogObject, setIsDogUploaded }) => {
 
     return (
         <>
-            {dogUploaded.dog_id ?
+            {dogUploaded.breedName ?
                     <DogFoundCard dogUploaded={dogUploaded} dogObject={dogObject} onClick={onClick}/>
                 :
                 <>

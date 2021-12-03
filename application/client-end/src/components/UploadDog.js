@@ -14,7 +14,7 @@ const UploadDog = () => {
         dispatch(setIsDogUploaded(value));
     }
 
-    const getDogInfo = (dog_id) => {
+    const getDogInfo = (breedName) => {
         axios.get()
         .then( (res) => {
             // something
