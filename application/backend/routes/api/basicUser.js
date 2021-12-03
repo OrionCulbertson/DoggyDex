@@ -1,4 +1,6 @@
 // routes/api/basicuser.js
+global.TextEncoder = require("util").TextEncoder;
+global.TextDecoder = require("util").TextDecoder;
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
@@ -71,6 +73,8 @@ router.post('/signup', (req, res, next) => {
                 console.log(result); // <---- ---- Remove when finishing dev
                 res.status(201).json({
                   message: 'User successfully created',
+                  name: user.name,
+                  email: user.email
                 });
               })
               .catch((err) => {
