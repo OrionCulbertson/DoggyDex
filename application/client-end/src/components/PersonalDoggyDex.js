@@ -1,29 +1,28 @@
 import React from 'react'
-import {  useHistory } from 'react-router-dom'; 
+import { useHistory } from 'react-router-dom'; 
 import image from '../resources/qm.png'
 import { useSelector } from 'react-redux';
 import jwt_decode from 'jwt-decode'
 import  Logo  from './Logo'
-
 
 const PersonalDoggyDex = ({ dogData }) => {
     const { isLoggedIn, user } = useSelector((state) => state.auth);
     const history = useHistory();
     const handleClick = (dogs, dogFound) => {
         console.log("Inside pdd ", dogs);
-        if(!dogFound) return;
+        if (!dogFound) return;
         history.push('/doginfo', {dogs: dogs});
    }
+
    let token = '';
    let decodedToken = '';
    let dogIDs = [];
-   if(isLoggedIn){
+   if (isLoggedIn){
        token = user.token;
        decodedToken = jwt_decode(token);
        console.log(decodedToken.dogbreedIDs);
        dogIDs = decodedToken.dogbreedIDs;
        console.log("this is dogIDS: ", dogIDs);
-
     }
 
     return (
@@ -38,12 +37,7 @@ const PersonalDoggyDex = ({ dogData }) => {
                         : <button id='dogs-unknown' key={dogs.breed} onClick={() => handleClick(dogs, false)}><text className="doggyDex-text">Unknown</text><img className="dogImg" src={image} ></img></button>)}
                 </div>
             </>
-            
-        
     )
 }
 
 export default PersonalDoggyDex
-
-
-

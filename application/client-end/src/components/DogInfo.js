@@ -22,12 +22,10 @@ const DogInfo = ( props ) => {
             </div>
             <div className="contentContainer" id="dog-info-bttn-container">
                 <button className="dog-info-bttn" onClick={() => handleClick()}>
-                    GO BACK
+                    Go Back
                 </button>
             </div>
             </div>
-  
-
   );
 };
 

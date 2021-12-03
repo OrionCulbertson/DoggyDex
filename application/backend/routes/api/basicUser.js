@@ -49,7 +49,7 @@ router.get('/:id', (req, res) => {
 
 //Basic_User router
 router.post('/signup', (req, res, next) => {
-  BasicUser.find({ email: req.body.email })
+    BasicUser.find({ email: req.body.email })
     .exec()
     .then((user) => {
       if (user.length >= 1) {
@@ -86,10 +86,24 @@ router.post('/signup', (req, res, next) => {
                 res.status(500).json({
                   error: err,
                 });
-              });
-          }
-        });
-      }
+                user
+                .save()
+                .then(result => {
+                    console.log(result); // <---- ---- Remove when finishing dev
+                    res.status(201).json({
+                        message: "User successfully created"
+                    });
+                })
+                .catch(err => {
+                    console.log(err);
+
+                    res.status(500).json({
+                        error: err
+                    });
+                });
+            }
+            });
+        }
     });
 });
 
@@ -110,9 +124,15 @@ router.post('/login', (req, res, next) => {
             message: 'Auth failed. Check password and email.',
           });
         }
+        bcrypt.compare(req.body.password, user.password, (err, result) => {
+            if (err) {
+            return res.status(401).json({
+                message: "Auth failed. Check password and email."
+            });
+            }
 
-        if (result) {
-          const token = jwt.sign(
+            if (result) {
+            const token = jwt.sign(
             {
               userName: user.userName,
               userId: user._id,
@@ -136,7 +156,6 @@ router.post('/login', (req, res, next) => {
         res.status(401).json({
           message: 'Auth failed',
         });
-      });
     })
     .catch((err) => {
       console.log(err);
@@ -176,9 +195,9 @@ router.put('/add/:user_id/:dog_id', (req, res) => {
 // @route GET api/dogbreed/:id
 // @description Delete dog by id
 router.delete('/:id', (req, res) => {
-  BasicUser.findByIdAndRemove(req.params.id, req.body)
-    .then((dog) => res.json({ mgs: 'Dog entry deleted successfully' }))
-    .catch((err) => res.status(404).json({ error: 'No such dog found' }));
+    BasicUser.findByIdAndRemove(req.params.id, req.body)
+    .then(user => res.json({ mgs: 'User entry deleted successfully' }))
+    .catch(err => res.status(404).json({ error: 'No such a user found' }));
 });
 
 module.exports = router;
