@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
-import { FaArrowUp, FaPaw } from "react-icons/fa";
+import React, { useState } from 'react';
+import { FaArrowUp, FaPaw } from 'react-icons/fa';
 import Button from './Button';
 import axios from 'axios';
+import { HiOutlineExclamation } from 'react-icons/hi';
 
 const DogSubmission = ({ setDogUploaded, setIsDogUploaded, getDogInfo }) => {
     // const [file, setFile] = useState("");
@@ -170,17 +171,28 @@ const handleOnChange = (event) => {
           > Upload
         </button>
 
-      </form>
-      <div>
-      <img
-      style={{ width: "25%", margin: "30px 0" }}
-      src={imgFile} alt="img"/>
-      </div>
+        {isPhoto && (
+          <Button
+            contents={
+              <div>
+                Submit <FaArrowUp />
+              </div>
+            }
+            styleClass="stdButton"
+            type="submit"
+          />
+        )}
 
-    </div>
+        {photo &&
+          !isPhoto && ( //Check if file uploaded is a photo
+            <div className="uploadError">
+              <HiOutlineExclamation /> File selected is not a photo.{' '}
+              <HiOutlineExclamation />
+            </div>
+          )}
+      </form>
+    </>
   );
 };
 
-export default PhotoUpload;
-
-*/
+export default DogSubmission;

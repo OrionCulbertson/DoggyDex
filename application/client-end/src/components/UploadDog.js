@@ -1,19 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Button from './Button';
 import DogSubmission from './DogSubmission';
 import { useDispatch, useSelector } from 'react-redux';
 import { setIsDogUploaded } from '../actions/dogUploaded';
 import { DogFound } from '.';
 
 const UploadDog = () => {
-    const { isDogUploaded } = useSelector(state => state.dogUploaded);
-    const [dogUploaded, setDogUploaded] = useState({}); // Contains Dog ID, Confidence Score
-    const [dogObject, setDogObject] = useState({}); // Contains Entire Dog Object
-    const dispatch = useDispatch();
+  const { isDogUploaded } = useSelector((state) => state.dogUploaded);
+  const [dogUploaded, setDogUploaded] = useState({}); //Contains Dog ID, Confidence Score
+  const [dogObject, setDogObject] = useState({}); //Contains Entire Dog Object
+  const dispatch = useDispatch();
 
-    const dispatchDogUploaded = (value) => {
-        dispatch(setIsDogUploaded(value));
-    }
+  const dispatchDogUploaded = (value) => {
+    dispatch(setIsDogUploaded(value));
+  };
 
     const getDogInfo = (breedName) => {
         axios.get(`/api/dogbreed/${breedName}`)

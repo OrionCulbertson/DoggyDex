@@ -1,11 +1,10 @@
 {
-  "name": "doggo-test",
+  "name": "client-end",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
     "axios": "^0.24.0",
     "child_process": "^1.0.2",
     "jwt-decode": "^3.1.2",
@@ -25,6 +24,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:CreateAccount": "npm test /src/unittests/CreateAccount.test.js -- --watchAll=false",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -47,6 +47,10 @@
   },
   "proxy": "http://localhost:8080/",
   "devDependencies": {
-    "redux-devtools-extension": "^2.13.9"
+    "@testing-library/dom": "^8.11.1",
+    "@testing-library/user-event": "^12.8.3",
+
+    "redux-devtools-extension": "^2.13.9",
+    "supertest": "^6.1.6"
   }
 }
