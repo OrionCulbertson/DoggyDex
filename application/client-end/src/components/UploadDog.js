@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import DogSubmission from './DogSubmission';
 import { useDispatch, useSelector } from 'react-redux';
 import { setIsDogUploaded } from '../actions/dogUploaded';
@@ -20,9 +21,9 @@ const UploadDog = () => {
             console.log(res);
 
             setDogObject({
-              dogID: res._id,
-              dogBreed: res.dogbreed,
-              img: res.img,
+              dogID: res.data[0]._id,
+              dogBreed: res.data[0].dogbreed,
+              img: res.data[0].img,
             });
         })
         .catch(error => console.log(`Error: ${error}`))

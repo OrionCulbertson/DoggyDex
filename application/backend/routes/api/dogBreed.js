@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
 // @description Get single dogbreed by id
 router.get('/:id', (req, res) => {
     Dog.find({$or: [
-        {dogbreed: req.params.id},
+        {dogbreed: {'$regex': new RegExp("^" + req.params.id + "$", "i")}},
         {breedid: req.params.id}
     ]})
     .then(dog => res.json(dog))
