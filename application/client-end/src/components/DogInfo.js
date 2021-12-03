@@ -21,9 +21,6 @@ const DogInfo = ( dogs ) => {
                     GO BACK
                 </button>
             </div>
-            
-
-            
         </div>
 // import React, { useState } from 'react'
 // import axios from 'axios'

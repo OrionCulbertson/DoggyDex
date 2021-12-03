@@ -22,11 +22,12 @@ app.use(express.json({ extended: false }));
 // cors
 app.use(cors({ origin: true, credentials: true }));
 
-// Confirmation
+// Test confirmation
 app.get('/', (req, res) => {
     console.log("Welcome to the home page!");
-    console.log(req.body);
-    let data = "DATA TO SEND"
+    console.log("req.body:\t" + req.body);
+    let data = "Test data in a response";
+    console.log("res:\t\t" + data);
     res.send(data);
 })
 
@@ -42,5 +43,5 @@ app.listen(PORT, err => {
     if (err) {
         console.log("There was a problem: ", err);
     }
-    console.log(`Server running on port ${PORT}`)
+    console.log(`Server running on port ${PORT}`);
 })

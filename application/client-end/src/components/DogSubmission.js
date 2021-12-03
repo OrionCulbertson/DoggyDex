@@ -115,7 +115,6 @@ const DogSubmission = ({ setDogUploaded, setIsDogUploaded, getDogInfo }) => {
 
 export default DogSubmission;
 
-
 /*
 
 import React, { useState } from 'react';
