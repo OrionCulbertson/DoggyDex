@@ -64,7 +64,7 @@ const UserProfile = () => {
             <ProfileLine title="Email" contents={user.email} />
             <ProfileLine
               title="Dog Breeds Found"
-              contents={userDoggyDex ? userDoggyDex.length : 0}
+              contents={userDoggyDex ? decodedToken.dogbreedIDs.length : 0}
             />
           </div>
           <Link id="logOutButton" className="menuLink" to="/" onClick={signOut}>

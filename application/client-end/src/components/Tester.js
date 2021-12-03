@@ -51,7 +51,10 @@ const About = () => {
     }
 
     const onSubmit = (e) => {
+        console.log('****** decodedToken inside onSubmit*****')
+        console.log(decodedToken.userId)
         console.log('decodedToken inside onSubmit', decodedToken.userId)
+        
         e.preventDefault();
         
         axios.post(`api/add/:user_id/:dog_id`, {

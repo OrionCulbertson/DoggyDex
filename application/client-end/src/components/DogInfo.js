@@ -15,7 +15,7 @@ const DogInfo = ( props ) => {
             <div className="dogInfo-container">
 
                 
-                <img src={dog.img} className="dogInfo-image"></img>
+                <img src={dog.img} className="dogInfo-image" alt=""></img>
                 <h1 className="dogInfo-breed">{dog.dogbreed}</h1>
                 <hr className="dogInfo-line"/>
                 <p>{dog.description}</p>
@@ -24,6 +24,7 @@ const DogInfo = ( props ) => {
                 <button className="dog-info-bttn" onClick={() => handleClick()}>
                     GO BACK
                 </button>
+            </div>
             </div>
   
 
