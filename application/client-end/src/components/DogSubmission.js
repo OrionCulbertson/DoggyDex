@@ -4,8 +4,8 @@ import Button from './Button';
 import axios from 'axios';
 
 const DogSubmission = ({ setDogUploaded, setIsDogUploaded, getDogInfo }) => {
-    const [file, setFile] = useState("");
-    const [fileName, setFileName] = useState("Choose File");
+    // const [file, setFile] = useState("");
+    // const [fileName, setFileName] = useState("Choose File");
     //const [uploadedFile, setUploadedFile] = useState({});
     //const [message, setMessage] = useState("");
     const [photo, setPhoto] = useState(null);
@@ -62,8 +62,8 @@ const DogSubmission = ({ setDogUploaded, setIsDogUploaded, getDogInfo }) => {
                     // setDogUploaded({dog_id: 10, confidenceScore: 90}); // Testing information
                     getDogInfo(breedName); // Loads dog object based off dog breed response
                     setIsDogUploaded(true); // Updates the page
-                    setFile({}); // Reset File Upload info
-                    setFileName(""); // Reset File Name info
+                    // setFile({}); // Reset File Upload info
+                    // setFileName(""); // Reset File Name info
                 })
         } catch (error) {
             error.response("Err" + error.response.data);

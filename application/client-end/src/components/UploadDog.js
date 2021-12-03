@@ -15,9 +15,15 @@ const UploadDog = () => {
     }
 
     const getDogInfo = (breedName) => {
-        axios.get()
+        axios.get(`/api/dogbreed/${breedName}`)
         .then( (res) => {
-            // something
+            console.log(res);
+
+            setDogObject({
+              dogID: res._id,
+              dogBreed: res.dogbreed,
+              img: res.img,
+            });
         })
         .catch(error => console.log(`Error: ${error}`))
         
@@ -32,11 +38,11 @@ const UploadDog = () => {
         //         // console.log("In DI", dogObject.dog_id, dogObject.dog_breed);
         //     })
         //     .catch(error => console.log(`Error: ${error}`))
-        setDogObject({
-            dogID: dog_id,
-            dogBreed: "German Shepherd",
-            img: "https://www.akc.org/wp-content/uploads/2017/11/German-Shepherd-on-White-00.jpg"
-        })
+        // setDogObject({
+        //     dogID: dog_id,
+        //     dogBreed: "German Shepherd",
+        //     img: "https://www.akc.org/wp-content/uploads/2017/11/German-Shepherd-on-White-00.jpg"
+        // })
     }
 
     return (
