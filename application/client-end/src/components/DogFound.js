@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import axios from 'axios'
+import React from 'react'
 import { Button, DogFoundCard } from '.';
 import { FaArrowLeft } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
@@ -12,10 +11,8 @@ const DogFound = ({dogUploaded, dogObject, setIsDogUploaded }) => {
 
     return (
         <>
-            {dogUploaded.dog_id ?
-                
+            {dogUploaded.breedName ?
                     <DogFoundCard dogUploaded={dogUploaded} dogObject={dogObject} onClick={onClick}/>
-                
                 :
                 <>
                     <p className="medText">We couldn't recognize any dogs in the picture!</p>
