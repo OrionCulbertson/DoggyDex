@@ -21,8 +21,11 @@ router.get('/', (req, res) => {
 // @description Get single dogbreed by id
 
 router.get('/:id', (req, res) => {
+
+  const tempDogBreed = req.params.id.toLocaleLowerCase();
+
   Dog.find({$or: [
-    {dogbreed: req.params.id},
+    {dogbreed: tempDogBreed},
     {breedid: req.params.id}
   ]})
   .then(dog => res.json(dog))

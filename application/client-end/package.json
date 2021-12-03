@@ -1,5 +1,5 @@
 {
-  "name": "doggo-test",
+  "name": "client-end",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -49,9 +49,7 @@
   "devDependencies": {
     "@testing-library/dom": "^8.11.1",
     "@testing-library/user-event": "^12.8.3",
-    "jest": {
-      "testEnvironment": "node"
-    },
+
     "redux-devtools-extension": "^2.13.9",
     "supertest": "^6.1.6"
   }

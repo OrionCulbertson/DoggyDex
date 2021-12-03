@@ -21,17 +21,17 @@ const login = (email, password) => {
       if (response.data.token) {
         localStorage.setItem("user", JSON.stringify(response.data));
         console.log("Logged in successfully:", JSON.parse(localStorage.getItem("user")));
-        // console.log(`Data: ${JSON.stringify(response.data)}`);
       }
       return response.data;
     });
 };
 
 const logout = () => {
-  // console.log("msg")
   console.log("Logging out from auth service");
   localStorage.removeItem("user");
 };
+
+
 
 export default {
   register,
