@@ -42,8 +42,7 @@ const DogSubmission = ({ setDogUploaded, setIsDogUploaded, getDogInfo }) => {
                     // mlJSONResponse.humanPresent;
                     // mlJSONResponse.confidenceScore;
 
-/*                     const breedName = mlJSONResponse.breedName; */
-                    const breedName = "German shepherd dog";
+                    const breedName = mlJSONResponse.breedName;
                     const confidenceScore = mlJSONResponse.confidenceScore;
                     
                     /* TODO
@@ -119,80 +118,5 @@ const DogSubmission = ({ setDogUploaded, setIsDogUploaded, getDogInfo }) => {
         </>
     )
 }
-
-export default DogSubmission;
-
-/*
-
-import React, { useState } from 'react';
-import axios from 'axios';
-
-const PhotoUpload = () => {
-const [photo, setPhoto] = useState(null);
-const [imgFile, setImgFile] = useState('');
-const handleOnChange = (event) => {
-    const file = event.target.files[0];
-    setPhoto(file);
-};
-  const handleFormSubmit = (event) => {
-    event.preventDefault();
-    try {
-        const formData = new FormData();
-        formData.append('image', photo);
-         axios.post('http://localhost:8080/api/image/upload', formData, {
-            headers: {
-              'Content-Type': 'multipart/form-data'
-         }})
-          .then(res => {
-            setImgFile('http://localhost:8080/api/image/id/' + res.data._id)
-          })
-      } catch (error) {
-        error.response("Err" + error.response.data);
-      }
-  };
-  return (
-    <div>
-      <form
-        onSubmit={handleFormSubmit}
-        method="post"
-        encType="multipart/form-data"
-        className="upload-form"
-      >
-        <div>
-          <label htmlFor="name">Choose photo to upload</label>
-          <input type="file" name="image" onChange={handleOnChange} />
-        </div>
-
-        <button
-          variant="primary"
-          type="submit"
-          className={`${!photo ? 'disabled submit-btn' : 'submit-btn'}`}
-          disabled={photo ? false : true}
-          > Upload
-        </button>
-
-        {isPhoto && (
-          <Button
-            contents={
-              <div>
-                Submit <FaArrowUp />
-              </div>
-            }
-            styleClass="stdButton"
-            type="submit"
-          />
-        )}
-
-        {photo &&
-          !isPhoto && ( //Check if file uploaded is a photo
-            <div className="uploadError">
-              <HiOutlineExclamation /> File selected is not a photo.{' '}
-              <HiOutlineExclamation />
-            </div>
-          )}
-      </form>
-    </>
-  );
-};
 
 export default DogSubmission;
