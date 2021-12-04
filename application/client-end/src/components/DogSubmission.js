@@ -3,11 +3,13 @@ import { FaArrowUp, FaPaw } from 'react-icons/fa';
 import Button from './Button';
 import axios from 'axios';
 import { HiOutlineExclamation } from 'react-icons/hi';
+import { DogResultLoading } from '.';
 
 const DogSubmission = ({ setDogUploaded, setIsDogUploaded, getDogInfo }) => {
   const [photo, setPhoto] = useState(null);
   const [imgFile, setImgFile] = useState('');
   const [isPhoto, setIsPhoto] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const onChange = (event) => {
     const file = event.target.files[0];
@@ -15,13 +17,15 @@ const DogSubmission = ({ setDogUploaded, setIsDogUploaded, getDogInfo }) => {
     setIsPhoto(file.type.startsWith('image') && !file.type.endsWith('gif'));
   };
 
-  const onSubmit = (event) => {
+  const onSubmit = async (event) => {
     event.preventDefault();
     try {
       const formData = new FormData();
       formData.append('image', photo);
       console.log(photo);
-      axios
+      console.log('before');
+      setIsLoading(true);
+      await axios
         .post('http://localhost:8080/api/image/upload', formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
@@ -38,7 +42,7 @@ const DogSubmission = ({ setDogUploaded, setIsDogUploaded, getDogInfo }) => {
 
           const breedName = mlJSONResponse.breedName;
           const confidenceScore = mlJSONResponse.confidenceScore;
-
+          // await new Promise((resolve) => setTimeout(resolve, 5000));
           /* TODO
                         Get dog ID from returned dog breed
                         Get whole dog w/ getDogInfo
@@ -59,32 +63,40 @@ const DogSubmission = ({ setDogUploaded, setIsDogUploaded, getDogInfo }) => {
           setIsDogUploaded(true); // Updates the page
           // setFile({}); // Reset File Upload info
           // setFileName(""); // Reset File Name info
+          console.log('done');
         });
+
+      console.log('after');
+      setIsLoading(false);
     } catch (error) {
-      error.response('Err' + error.response.data);
+      error.response('Err' + error);
     }
   };
 
   return (
     <>
-      <h2 className="bigText">Upload A Dog Picture!</h2>
-      <form onSubmit={onSubmit}>
-        <label htmlFor="dogUpload" className="uploadDogButton">
-          <i>{<FaPaw />}</i> Select Dog Photo... <i>{<FaPaw />}</i>
-        </label>
-        <input id="dogUpload" type="file" onChange={onChange} />
-        {isPhoto && (
-          <Button
-            contents={
-              <div>
-                Submit <FaArrowUp />
-              </div>
-            }
-            styleClass="stdButton"
-            type="submit"
-          />
-        )}
-      </form>
+      {!isLoading && (
+        <>
+          <h2 className="bigText">Upload A Dog Picture!</h2>
+          <form onSubmit={onSubmit}>
+            <label htmlFor="dogUpload" className="uploadDogButton">
+              <i>{<FaPaw />}</i> Select Dog Photo... <i>{<FaPaw />}</i>
+            </label>
+            <input id="dogUpload" type="file" onChange={onChange} />
+            {isPhoto && (
+              <Button
+                contents={
+                  <div>
+                    Submit <FaArrowUp />
+                  </div>
+                }
+                styleClass="stdButton"
+                type="submit"
+              />
+            )}
+          </form>
+        </>
+      )}
       {photo &&
         !isPhoto && ( //Check if file uploaded is a photo
           <div className="uploadError">
@@ -92,6 +104,7 @@ const DogSubmission = ({ setDogUploaded, setIsDogUploaded, getDogInfo }) => {
             <HiOutlineExclamation />
           </div>
         )}
+      {isLoading && <DogResultLoading/>}
     </>
   );
 };

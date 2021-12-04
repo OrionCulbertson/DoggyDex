@@ -17,3 +17,4 @@ export { default as DoggyDexToggle } from './DoggyDexToggle';
 export { default as DogFoundCard } from './DogFoundCard';
 export { default as DogFound } from './DogFound';
 export { default as Testing } from './Testing';
+export { default as DogResultLoading } from './DogResultLoading';
