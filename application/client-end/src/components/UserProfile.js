@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../actions/auth';
 import UserService from '../services/user.service';
 import { setUserDoggydex } from '../actions/userDoggyDex';
-import userService from '../services/user.service';
 import ProfileLine from './ProfileLine';
 
 const UserProfile = () => {

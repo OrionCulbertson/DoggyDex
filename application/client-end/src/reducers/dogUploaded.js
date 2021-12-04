@@ -6,12 +6,13 @@ const initialState = {
 
 export default function (state = initialState, action) {
     const { type, payload } = action;
-  
+    
     switch (type) {
-      case IS_DOG_UPLOADED:
-        return { isDogUploaded: payload };
-  
-      default:
-        return state;
+        case IS_DOG_UPLOADED:
+            return { isDogUploaded: payload };
+        
+        default:
+            return state;
     }
-  }
+}
+
