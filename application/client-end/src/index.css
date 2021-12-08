@@ -283,7 +283,7 @@ hr{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width:500px;
+    width:300px;
     background: #F9BEC7;
     margin: auto;
     padding:20px;
@@ -299,7 +299,8 @@ hr{
     border-color: #ff0a54;
     border-style: solid;
     
-    height: 300px;
+    /* height: 300px; */
+    width: 100%;
     align-items: center;
 }
 
@@ -368,6 +369,7 @@ hr{
 
 #dog-info-bttn-container{
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .devPhoto {
@@ -410,4 +412,10 @@ hr{
     background-color: #FF477E;
     text-align: center;
     border-radius: 15px;
+}
+
+.loadingPaws {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
 }
