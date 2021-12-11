@@ -3,8 +3,10 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import Logo from './Logo'
 
-const DogInfo = ( props ) => {
+const DogInfo = ( props) => {
+    console.log('inside of dogInfo', props);
     const dog = props.location.state.dogs;
+    console.log('this is dog inside of dogInfo', dog);
     const history = useHistory();
     const handleClick = () => {
         history.goBack();

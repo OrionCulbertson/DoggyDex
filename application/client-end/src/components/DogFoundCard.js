@@ -8,7 +8,7 @@ const DogFoundCard = ({ dogUploaded, dogObject, onClick }) => {
   // const dogBreed = "German Shepherd";
   //For testing, in implementation it'll be: dogObject.img
   // const dogImage = "https://www.akc.org/wp-content/uploads/2017/11/German-Shepherd-on-White-00.jpg";
-
+  console.log('inside of DogFoundCard', dogObject)
   return (
     <div>
       <img
@@ -21,11 +21,11 @@ const DogFoundCard = ({ dogUploaded, dogObject, onClick }) => {
         We can say with {dogUploaded.confidenceScore}% confidence it's a{' '}
         {dogObject.dogBreed}
       </p>
-      <Link to="/doggydex" onClick={onClick}>
+      <Link to={{pathname:'/doginfo', state:{ dogs: dogObject}}} onClick={onClick}>
         <Button
           contents={
             <div>
-              Go to DoggyDex <FaArrowRight />
+              Go to Dog Info <FaArrowRight />
             </div>
           }
           styleClass="stdButton"
