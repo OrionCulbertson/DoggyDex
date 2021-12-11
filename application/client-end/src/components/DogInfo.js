@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 // //https://dev.to/m_adams1909/data-fetching-with-axios-in-react-made-simple-2jei
 import { useHistory } from 'react-router-dom';
 import Logo from './Logo'
+
 
 const DogInfo = ( props) => {
     console.log('inside of dogInfo', props);
@@ -9,7 +10,7 @@ const DogInfo = ( props) => {
     console.log('this is dog inside of dogInfo', dog);
     const history = useHistory();
     const handleClick = () => {
-        history.goBack();
+        history.push('/doggydex');
     }
     return (
         <div>

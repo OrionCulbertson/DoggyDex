@@ -7,7 +7,6 @@ const DoggyDexToggle = ({ dogData }) => {
     const [isChecked, setIsChecked] = useState(false);
     
     const handleChange = () => {
-        console.log("I am being checked!")
         setIsChecked(!isChecked);
     }
     return (
@@ -20,11 +19,9 @@ const DoggyDexToggle = ({ dogData }) => {
 
             {isChecked ? "Switch to Learning Mode" : "Switch to Personal Mode"}
                 <input
-                    
                     type="checkbox"
                     checked={isChecked}
                     onChange={handleChange}
-                    
                 />
                 
             </div>
