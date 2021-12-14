@@ -309,6 +309,10 @@ hr{
     
 }
 
+.dogInfo-description{
+    font-family: 'Rubik', sans-serif;
+    font-size: 1em;
+}
 
 #toggle-dex{
     margin-top: 10px;

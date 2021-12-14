@@ -43,7 +43,7 @@ const DogSubmission = ({ setDogUploaded, setIsDogUploaded, getDogInfo }) => {
           
           // const breedName = mlJSONResponse.breedName;
           // const confidenceScore = mlJSONResponse.confidenceScore;
-          const breedName = 'German Shepherd Dog';
+          const breedName = 'Labrador Retriever';
           const confidenceScore = 20;
           // await new Promise((resolve) => setTimeout(resolve, 5000));
           /* TODO
