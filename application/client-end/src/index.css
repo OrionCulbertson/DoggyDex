@@ -18,6 +18,7 @@ body {
     background: #FF99AC;
     font-family: 'Rubik', sans-serif;
     color: #770024;
+
 }
 
 .stdButton {
@@ -123,15 +124,24 @@ table {
 }
 
 /* Error styling */
+.validation {
+ 
+}
+
 .validation-error {
+    
     text-align: center;
     background-color: #ff0000;
+    margin-bottom: 5px;
+    border-radius: 10px;
 }
 
 /* Success styling */
 .validation-success {
     text-align: center;
     background-color: #00ff00;
+    margin-bottom: 5px;
+    border-radius: 10px;
 }
 
 .navButton {
@@ -412,6 +422,25 @@ hr{
     background-color: #FF477E;
     text-align: center;
     border-radius: 15px;
+}
+
+.generalError {
+    width: 100%;
+    background-color: #FF477E;
+    text-align: center;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    padding: 5px
+}
+
+.dogUnsupported {
+    width: 90%;
+    background-color: #FF477E;
+    text-align: center;
+    border-radius: 15px;
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 5px;
 }
 
 .loadingPaws {

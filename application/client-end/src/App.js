@@ -2,6 +2,8 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store";
 import { About, Menu, Home, UserProfile, CreateAccount, LogIn, DoggyDex, DogInfo, Testing } from "./components"
+import AuthVerify from "./common/AuthVerify";
+import { logout } from "./actions/auth";
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
             <Route path="/doggydex" component={DoggyDex} />
             <Route path="/doginfo/" component={DogInfo} />
             <Route path="/testing" component={Testing} />
+            <AuthVerify logOut={logout} />
           </div>
         </div>
       </Router>

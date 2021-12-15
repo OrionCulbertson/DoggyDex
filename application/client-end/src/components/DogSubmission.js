@@ -1,15 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaArrowUp, FaPaw } from 'react-icons/fa';
 import Button from './Button';
 import axios from 'axios';
 import { HiOutlineExclamation } from 'react-icons/hi';
 import { DogResultLoading } from '.';
+import { useDispatch } from 'react-redux';
+// import { setIsDogUploaded } from '../actions/dogUploaded';
+
 
 const DogSubmission = ({ setDogUploaded, setIsDogUploaded, getDogInfo }) => {
   const [photo, setPhoto] = useState(null);
   const [imgFile, setImgFile] = useState('');
   const [isPhoto, setIsPhoto] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const dispatch = useDispatch();
 
   const onChange = (event) => {
     const file = event.target.files[0];
@@ -17,6 +21,7 @@ const DogSubmission = ({ setDogUploaded, setIsDogUploaded, getDogInfo }) => {
     setIsPhoto(file.type.startsWith('image') && !file.type.endsWith('gif'));
   };
 
+ 
   const onSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -31,8 +36,8 @@ const DogSubmission = ({ setDogUploaded, setIsDogUploaded, getDogInfo }) => {
             'Content-Type': 'multipart/form-data',
           },
         })
-        .then((res) => {
-          // setImgFile('http://localhost:8080/api/image/id/' + res.data._id);
+        .then(async (res) => {
+          
           // console.log(imgFile);
           const mlJSONResponse = res.data;
           console.log(mlJSONResponse);
@@ -41,6 +46,7 @@ const DogSubmission = ({ setDogUploaded, setIsDogUploaded, getDogInfo }) => {
           // mlJSONResponse.confidenceScore;
 
           const breedName = mlJSONResponse.breedName;
+          // const breedName = 'testersss';
           const confidenceScore = mlJSONResponse.confidenceScore;
           // await new Promise((resolve) => setTimeout(resolve, 5000));
           /* TODO
@@ -59,15 +65,18 @@ const DogSubmission = ({ setDogUploaded, setIsDogUploaded, getDogInfo }) => {
           // setMessage("File Uploaded");
           setDogUploaded({ breedName, confidenceScore });
           // setDogUploaded({dog_id: 10, confidenceScore: 90}); // Testing information
-          getDogInfo(breedName); // Loads dog object based off dog breed response
-          setIsDogUploaded(true); // Updates the page
+          await getDogInfo(breedName); // Loads dog object based off dog breed response
+          // setIsDogUploaded(true); // Updates the page
+          
           // setFile({}); // Reset File Upload info
           // setFileName(""); // Reset File Name info
+          // setImgFile('http://localhost:8080/api/image/id/' + res.data._id);
           console.log('done');
         });
 
+      setIsDogUploaded(true);
       console.log('after');
-      setIsLoading(false);
+      // setIsLoading(false);
     } catch (error) {
       error.response('Err' + error);
     }
@@ -104,7 +113,7 @@ const DogSubmission = ({ setDogUploaded, setIsDogUploaded, getDogInfo }) => {
             <HiOutlineExclamation />
           </div>
         )}
-      {isLoading && <DogResultLoading/>}
+      {isLoading && <DogResultLoading />}
     </>
   );
 };
