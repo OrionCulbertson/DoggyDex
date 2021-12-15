@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import { Button, Logo } from '.';
 import { login } from '../actions/auth';
+import { HiOutlineExclamation } from 'react-icons/hi';
+
 import UserService from '../services/user.service';
 
 const LogIn = () => {
@@ -36,6 +38,7 @@ const LogIn = () => {
       .catch((err) => {
         // setLoading(false);
         console.log(err);
+        setLoginFail(true);
       });
   };
 
@@ -64,6 +67,12 @@ const LogIn = () => {
               onChange={onChangePassword}
             />
           </div>
+          {loginFail && (
+            <div className="generalError">
+              <HiOutlineExclamation /> Failed to Log In, try again.{' '}
+              <HiOutlineExclamation />
+            </div>
+          )}
           <Button
             contents={<div>Login</div>}
             styleClass="stdButton"
