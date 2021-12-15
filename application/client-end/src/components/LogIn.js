@@ -12,6 +12,7 @@ const LogIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
+  const [loginFail, setLoginFail] = useState(false);
 
   const onChangeEmail = (e) => {
     const email = e.target.value;
@@ -34,7 +35,7 @@ const LogIn = () => {
       .then(() => {})
       .catch((err) => {
         // setLoading(false);
-        console.log(err.message);
+        console.log(err);
       });
   };
 
