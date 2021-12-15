@@ -45,10 +45,10 @@ const DogSubmission = ({ setDogUploaded, setIsDogUploaded, getDogInfo }) => {
           // mlJSONResponse.humanPresent;
           // mlJSONResponse.confidenceScore;
 
-          // const breedName = mlJSONResponse.breedName;
-          const breedName = 'testersss';
+          const breedName = mlJSONResponse.breedName;
+          // const breedName = 'testersss';
           const confidenceScore = mlJSONResponse.confidenceScore;
-          await new Promise((resolve) => setTimeout(resolve, 5000));
+          // await new Promise((resolve) => setTimeout(resolve, 5000));
           /* TODO
                         Get dog ID from returned dog breed
                         Get whole dog w/ getDogInfo
