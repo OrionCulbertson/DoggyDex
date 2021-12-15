@@ -19,12 +19,11 @@ const UploadDog = () => {
     const getDogInfo = (breedName) => {
         axios.get(`/api/dogbreed/${breedName}`)
         .then( (res) => {
-            console.log(res);
-
             setDogObject({
               dogID: res.data[0]._id,
               dogBreed: res.data[0].dogbreed,
               img: res.data[0].img,
+              description: res.data[0].description
             });
         })
         .catch(error => console.log(`Error: ${error}`))

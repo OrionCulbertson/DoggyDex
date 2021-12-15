@@ -39,9 +39,12 @@ const DogSubmission = ({ setDogUploaded, setIsDogUploaded, getDogInfo }) => {
           // mlJSONResponse.breedName;
           // mlJSONResponse.humanPresent;
           // mlJSONResponse.confidenceScore;
-
-          const breedName = mlJSONResponse.breedName;
-          const confidenceScore = mlJSONResponse.confidenceScore;
+          
+          
+          // const breedName = mlJSONResponse.breedName;
+          // const confidenceScore = mlJSONResponse.confidenceScore;
+          const breedName = 'Labrador Retriever';
+          const confidenceScore = 20;
           // await new Promise((resolve) => setTimeout(resolve, 5000));
           /* TODO
                         Get dog ID from returned dog breed

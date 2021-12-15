@@ -9,7 +9,8 @@ const DogFound = ({ dogUploaded, dogObject, setIsDogUploaded }) => {
   const onClick = () => {
     setIsDogUploaded(false);
   };
-
+  console.log('DogFound-dogUploaded', dogUploaded);
+  console.log('DogFound-dogObject', dogObject);
   return (
     <>
       {dogUploaded.breedName ? (
