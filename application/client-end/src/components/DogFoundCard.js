@@ -22,7 +22,7 @@ const DogFoundCard = ({ dogUploaded, dogObject, onClick }) => {
         {dogUploaded.breedName}
       </p>
       {!dogObject.dogID && <DogNotSupported />}
-      //<Link to="/doggydex" onClick={onClick}>
+      {/* <Link to="/doggydex" onClick={onClick}>}  */}
       <Link to={{pathname:'/doginfo', state:{ dogs: dogObject}}} onClick={onClick}>
 
         <Button
