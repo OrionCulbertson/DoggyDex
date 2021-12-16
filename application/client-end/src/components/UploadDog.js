@@ -1,51 +1,103 @@
-import React, { useState, useEffect } from 'react'
-import axios from "axios"
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import Button from './Button';
 import DogSubmission from './DogSubmission';
-import DogInfo from './DogInfo';
 import { useDispatch, useSelector } from 'react-redux';
 import { setIsDogUploaded } from '../actions/dogUploaded';
-import { DogFound, Logo } from '.';
+import { DogFound } from '.';
+import jwt_decode from 'jwt-decode';
 
 const UploadDog = () => {
-    const { isDogUploaded } = useSelector(state => state.dogUploaded);
-    const [dogUploaded, setDogUploaded] = useState({}); //Contains Dog ID, Confidence Score
-    const [dogObject, setDogObject] = useState({}); //Contains Entire Dog Object
-    const dispatch = useDispatch();
+  const { isLoggedIn, user } = useSelector((state) => state.auth);
+  const { isDogUploaded } = useSelector((state) => state.dogUploaded);
+  const [dogUploaded, setDogUploaded] = useState({}); //Contains Dog ID, Confidence Score
+  const [dogObject, setDogObject] = useState({}); //Contains Entire Dog Object
+  const dispatch = useDispatch();
 
-    const dispatchDogUploaded = (value) => {
-        dispatch(setIsDogUploaded(value));
-    }
+  const dispatchDogUploaded = (value) => {
+    dispatch(setIsDogUploaded(value));
+  };
 
-    const getDogInfo = (dog_id) => {
-        //TODO: DEFINE IT
-        // axios.get(`/dog-info/${dog_id}`)
-        //     .then( (response) => {
-        //         console.log(response.data);
-        //         setDogObject(response.data);
-        //         // console.log(response)
-        //         // console.log(dogObject)
-        //         // console.log("In DI", dogObject.dog_id, dogObject.dog_breed);
-        //     })
-        //     .catch(error => console.log(`Error: ${error}`))
-        setDogObject({
-            dogID: dog_id,
-            dogBreed: "German Shepherd",
-            img: "https://www.akc.org/wp-content/uploads/2017/11/German-Shepherd-on-White-00.jpg",
+  // useEffect(() => {
+  //   console.log('triggered', dogUploaded);
+  //   let mounted = true;
+  //   if (dogUploaded.breedName != null) {
+  //     if (mounted) {
+  //       // dispatch(setIsDogUploaded(true));
+  //     }
+  //   } else {
+  //     // if (mounted) {
+  //     //   console.log("NOT UPLOADED");
+  //       // dispatch(setIsDogUploaded(false));
+  //     // }
+  //   }
+  //   return () => {
+  //     mounted = false;
+  //   };
+  // }, [dogUploaded]);
+
+  const addToUserDoggyDex = async (dogID) => {
+    // axios.post()
+    try {
+      const decodedToken = jwt_decode(user.token);
+      const userID = decodedToken.userId;
+
+      await axios
+        .put(`/api/basicuser/add/${userID}/${dogID}`)
+        .then((res) => {
+          console.log(res.msg);
 
         })
+        .catch((err) => {
+          console.log(err);
+        });
+    } catch (e) {
+      console.log(e);
     }
+  };
 
-    return (
-        <>
-            {isDogUploaded ?
-                <DogFound dogUploaded={dogUploaded} dogObject={dogObject} setIsDogUploaded={dispatchDogUploaded} />
+  const getDogInfo = async (breedName) => {
+    await axios
+      .get(`/api/dogbreed/${breedName}`)
+      .then((res) => {
+        console.log('Upload Dog', res);
+        setDogObject({
+          dogID: res.data[0].breedid,
+          dogBreed: res.data[0].dogbreed,
+          img: res.data[0].img,
+          description: res.data[0].description,
+        });
+        console.log(res.data[0].breedid);
 
-                :
-                <DogSubmission setDogUploaded={setDogUploaded} setIsDogUploaded={dispatchDogUploaded} getDogInfo={getDogInfo} />
-            }
-        </>
-    )
-}
+        //Log in User's DoggyDex
+        if (isLoggedIn) {
+          addToUserDoggyDex(res.data[0].breedid);
+        }
+      })
+      .catch((error) => {
+        //Means that the dog isn't in our database.
+
+        console.log(`Error: ${error}`);
+      });
+  };
+
+  return (
+    <>
+      {isDogUploaded ? (
+        <DogFound
+          dogUploaded={dogUploaded}
+          dogObject={dogObject}
+          setIsDogUploaded={dispatchDogUploaded}
+        />
+      ) : (
+        <DogSubmission
+          setDogUploaded={setDogUploaded}
+          setIsDogUploaded={dispatchDogUploaded}
+          getDogInfo={getDogInfo}
+        />
+      )}
+    </>
+  );
+};
 
 export default UploadDog;

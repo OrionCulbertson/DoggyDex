@@ -7,9 +7,10 @@ import axios from "axios";
 import { useState } from "react";
 import authHeader from "../services/auth-header";
 import userService from "../services/user.service";
-
+import jwt_decode from 'jwt-decode'
 
 const About = () => {
+    console.log('this is a test');
     const { user } = useSelector((state) => state.auth);
     const { message } = useSelector(state => state.message);
     const { isDogUploaded } = useSelector(state => state.dogUploaded);
@@ -17,14 +18,30 @@ const About = () => {
     // const [userid, setUserid] = useState(undefined);
     const dispatch = useDispatch();
     // const { isDogUploaded: isDogUploaded } = useSelector((state) => state.isDogUploaded);
-
+    
     const {userDoggyDex} = useSelector(state => state.userDoggyDex);
+
+    let token = user.token;
+   let decodedToken = jwt_decode(token);
+   console.log('inside tester', decodedToken)
+//    let dogIDs = [];
+//    if(isLoggedIn){
+//        token = user.token;
+//        decodedToken = jwt_decode(token);
+//        console.log(decodedToken.dogbreedIDs);
+//        dogIDs = decodedToken.dogbreedIDs;
+//        console.log("this is dogIDS: ", dogIDs);
+
+//     }
+
     const check = () => {
         // dispatch(setMessage("hello"))
         // dispatch(setIsDogUploaded(!isDogUploaded));
         // console.log(JSON.parse(localStorage.getItem("user")));
         axios.get("/api/dogbreed/").then(res => console.log(res.data)).catch(err => console.log(err));
     }
+
+
 
     const getUserDogs = () => {
         // console.log(userDoggyDex);
@@ -34,10 +51,14 @@ const About = () => {
     }
 
     const onSubmit = (e) => {
+        console.log('****** decodedToken inside onSubmit*****')
+        console.log(decodedToken.userId)
+        console.log('decodedToken inside onSubmit', decodedToken.userId)
+        
         e.preventDefault();
-        console.log(dogid);
-        axios.post(`/api/userdoggydex/add`, {
-            userid: user.userId,
+        
+        axios.post(`api/add/:user_id/:dog_id`, {
+            userid: decodedToken.userId,
             breedid: dogid,
         })
         .then(

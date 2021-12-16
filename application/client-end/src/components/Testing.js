@@ -9,6 +9,10 @@ import authHeader from "../services/auth-header";
 import userService from "../services/user.service";
 import { setUserDoggydex } from "../actions/userDoggyDex";
 
+import jwt_decode from 'jwt-decode'
+import { register } from "../actions/auth";
+
+
 const Testing = () => {
     const { user } = useSelector((state) => state.auth);
     const { message } = useSelector(state => state.message);
@@ -20,10 +24,9 @@ const Testing = () => {
 
     const { userDoggyDex } = useSelector(state => state.userDoggyDex);
     const check = () => {
-        // dispatch(setMessage("hello"))
-        // dispatch(setIsDogUploaded(!isDogUploaded));
-        // console.log(JSON.parse(localStorage.getItem("user")));
-        axios.get("/api/dogbreed/").then(res => console.log(res.data)).catch(err => console.log(err));
+        axios.get("/api/dogbreed/")
+        .then(res => console.log(res.data))
+        .catch(err => console.log(err));
     }
 
     const getUserDogs = () => {
@@ -35,21 +38,22 @@ const Testing = () => {
         });
     }
 
+    let token = user.token;
+    let decodedToken = jwt_decode(token);
     const onSubmit = (e) => {
         e.preventDefault();
-        console.log(dogid);
-        axios.post(`/api/userdoggydex/add`, {
-            userid: user.userId,
-            breedid: dogid,
-            })
+        axios.put('/api/basicuser/add/' + decodedToken.userId + '/' + dogid)
             .then(
-                // res => console.log(res.msg)
-            )
-            .catch(
-                e => console.log(e)
-        );
+                res =>  {
+                 axios.get('/api/basicuser/' + decodedToken.userId)
+                .then (res => {
+                    localStorage.removeItem('user');
+                    localStorage.setItem('user', JSON.stringify(res.data));
+                    window.location.reload();
+                })
+            })
+            .catch(e => console.log(e));
     }
-
     return (
         <div>
             <Logo />

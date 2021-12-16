@@ -1,60 +1,35 @@
-import React, {useState} from 'react'
+import React from 'react';
 // //https://dev.to/m_adams1909/data-fetching-with-axios-in-react-made-simple-2jei
 import { useHistory } from 'react-router-dom';
+import Logo from './Logo'
 
-const DogInfo = ( props ) => {
+
+const DogInfo = ( props) => {
+    console.log('inside of dogInfo', props);
     const dog = props.location.state.dogs;
+    console.log('this is dog inside of dogInfo', dog);
     const history = useHistory();
     const handleClick = () => {
-        history.goBack();
+        history.push('/doggydex');
     }
     return (
         <div>
+            <Logo/>
+            <div className="dogInfo-container">
 
-            <div className="contentContainer">
-                <h1>Dog:</h1>
-                <h1>{dog.dogbreed}</h1>
-                <img src={dog.img}></img>
-                <p>{dog.description}</p>
+                
+                <img src={dog.img} className="dogInfo-image" alt=""></img>
+                <h1 className="dogInfo-breed">{dog.dogbreed}</h1>
+                <hr className="dogInfo-line"/>
+                <p ><pre className="dogInfo-description">{dog.description}</pre></p>
             </div>
             <div className="contentContainer" id="dog-info-bttn-container">
                 <button className="dog-info-bttn" onClick={() => handleClick()}>
-                    GO BACK
+                    Go Back
                 </button>
             </div>
-            
-
-            
-        </div>
-// import React, { useState } from 'react'
-// import axios from 'axios'
-// import { Button, DogFoundCard } from '.';
-// import { FaArrowLeft } from 'react-icons/fa';
-// import { Link } from 'react-router-dom';
-//https://dev.to/m_adams1909/data-fetching-with-axios-in-react-made-simple-2jei
-
-
-// const DogInfo = ({dogUploaded, dogObject, setIsDogUploaded }) => {
-//     const onClick = () => {
-//         setIsDogUploaded(false);
-//     }
-
-//     return (
-//         <>
-//             {dogUploaded.dog_id ?
-                
-//                     <DogFoundCard dogUploaded={dogUploaded} dogObject={dogObject} onClick={onClick}/>
-                
-//                 :
-//                 <>
-//                     <p className="medText">We couldn't recognize any dogs in the picture!</p>
-//                     <Link to="/" onClick={onClick}>
-//                         <Button contents={<div><FaArrowLeft /> Try Again</div>} styleClass="stdButton" />
-//                     </Link>
-//                 </>
-//             }
-//         </>
-    )
-}
+            </div>
+  );
+};
 
 export default DogInfo;

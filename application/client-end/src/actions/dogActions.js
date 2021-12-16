@@ -6,22 +6,21 @@ import {
 } from './types';
 
 export const fetchDogs = () => {
-    
     return (dispatch) => {
         dispatch(fetchDogsRequest);
         axios
-            .get('http://localhost:8080/api/dogbreed')
+            .get('/api/dogbreed')
             .then(response => {
                 const dogs = response.data;
                 dispatch(fetchDogsSuccess(dogs));
             })
-            .catch( error => {
+            .catch(error => {
                 dispatch(fetchDogsFailure(error));
             });
     };
 };
 
-export const fetchDogsRequest = () => ({  
+export const fetchDogsRequest = () => ({
     type: FETCH_DOGS_REQUEST,
 });
 
@@ -34,6 +33,3 @@ export const fetchDogsFailure = (error) => ({
     type: FETCH_DOGS_FAILURE,
     payload: error
 });
-
-
-
