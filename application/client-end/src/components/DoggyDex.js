@@ -9,7 +9,6 @@ function DoggyDex({ dogData, fetchDogs }) {
   useEffect(() => {
     fetchDogs();
   }, []);
-
   return dogData.loading ? (
     <h2>Loading</h2>
   ) : dogData.error ? (

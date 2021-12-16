@@ -18,6 +18,7 @@ body {
     background: #FF99AC;
     font-family: 'Rubik', sans-serif;
     color: #770024;
+
 }
 
 .stdButton {
@@ -123,15 +124,24 @@ table {
 }
 
 /* Error styling */
+.validation {
+ 
+}
+
 .validation-error {
+    
     text-align: center;
     background-color: #ff0000;
+    margin-bottom: 5px;
+    border-radius: 10px;
 }
 
 /* Success styling */
 .validation-success {
     text-align: center;
     background-color: #00ff00;
+    margin-bottom: 5px;
+    border-radius: 10px;
 }
 
 .navButton {
@@ -255,11 +265,11 @@ a {
     align-items: center;
     flex-direction: column;
     gap: 10px;
-    height: 100vh;
+    height: 90vh;
 }
 
 .doggyDex-container{
-    width: 300px;
+    width: 325px;
     padding: 10px;
     height: 475px;
     overflow-y: scroll;
@@ -283,7 +293,7 @@ hr{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width:500px;
+    width:300px;
     background: #F9BEC7;
     margin: auto;
     padding:20px;
@@ -299,7 +309,8 @@ hr{
     border-color: #ff0a54;
     border-style: solid;
     
-    height: 300px;
+    /* height: 300px; */
+    width: 100%;
     align-items: center;
 }
 
@@ -308,6 +319,10 @@ hr{
     
 }
 
+.dogInfo-description{
+    font-family: 'Rubik', sans-serif;
+    font-size: 1em;
+}
 
 #toggle-dex{
     margin-top: 10px;
@@ -368,6 +383,7 @@ hr{
 
 #dog-info-bttn-container{
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .devPhoto {
@@ -410,4 +426,29 @@ hr{
     background-color: #FF477E;
     text-align: center;
     border-radius: 15px;
+}
+
+.generalError {
+    width: 100%;
+    background-color: #FF477E;
+    text-align: center;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    padding: 5px
+}
+
+.dogUnsupported {
+    width: 90%;
+    background-color: #FF477E;
+    text-align: center;
+    border-radius: 15px;
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.loadingPaws {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
 }

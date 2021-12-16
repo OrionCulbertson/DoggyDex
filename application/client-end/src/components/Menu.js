@@ -12,12 +12,11 @@ import { setIsDogUploaded } from '../actions/dogUploaded';
 const Menu = () => {
   const [visibility, setVisibility] = useState('hide');
   const [isVisible, setIsVisible] = useState(true);
-  const menuOptions = ['User Profile', 'DoggyDex', 'Upload Dog', 'Testing'];
+  const menuOptions = ['User Profile', 'DoggyDex', 'Upload Dog'];
   const menuLinks = {
     'User Profile': '/user-profile',
     DoggyDex: '/doggydex',
     'Upload Dog': '/',
-    Testing: '/testing',
   };
   const { isDogUploaded } = useSelector((state) => state.dogUploaded); //not working?
 

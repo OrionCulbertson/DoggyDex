@@ -48,7 +48,7 @@ router.post('/upload', upload.single('image'), async (req, res, next) => {
         let photoFile = req.file.path;
 
         // spawn new child process to call the python script
-        const python = spawn('python', [scriptToOpen, photoFile]);
+        const python = spawn('python3', [scriptToOpen, photoFile]);
 
         // collect data from script output
         python.stdout.on('data', function (data) {
