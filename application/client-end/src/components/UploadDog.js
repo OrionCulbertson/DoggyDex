@@ -65,6 +65,7 @@ const UploadDog = () => {
           dogID: res.data[0].breedid,
           dogBreed: res.data[0].dogbreed,
           img: res.data[0].img,
+          description: res.data[0].description,
         });
         console.log(res.data[0].breedid);
 
