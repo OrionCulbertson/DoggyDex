@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from '.';
+import { Button, DogNotSupported } from '.';
 import { FaArrowRight } from 'react-icons/fa';
 
 const DogFoundCard = ({ dogUploaded, dogObject, onClick }) => {
@@ -11,17 +11,20 @@ const DogFoundCard = ({ dogUploaded, dogObject, onClick }) => {
   console.log('inside of DogFoundCard', dogObject)
   return (
     <div>
-      <img
+      {dogObject.img && <img
         src={dogObject.img}
         alt={`${dogObject.dogBreed} Picture`}
         className="dogPreview"
-      />
+      />}
       <p className="bigText">You found a dog!</p>
       <p className="medText">
         We can say with {dogUploaded.confidenceScore}% confidence it's a{' '}
-        {dogObject.dogBreed}
+        {dogUploaded.breedName}
       </p>
+      {!dogObject.dogID && <DogNotSupported />}
+      //<Link to="/doggydex" onClick={onClick}>
       <Link to={{pathname:'/doginfo', state:{ dogs: dogObject}}} onClick={onClick}>
+
         <Button
           contents={
             <div>

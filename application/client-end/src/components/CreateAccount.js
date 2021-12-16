@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Logo } from './';
-
+import { Redirect } from 'react-router-dom';
 import { register } from '../actions/auth';
 import { useDispatch } from 'react-redux';
 import { FaTimesCircle } from 'react-icons/fa';
+import { HiOutlineExclamation } from 'react-icons/hi';
 
 const CreateAccount = () => {
   const [name, setName] = useState('');
@@ -13,6 +14,7 @@ const CreateAccount = () => {
   const [password, setPassword] = useState('');
 
   const [successful, setSuccessful] = useState(false);
+  const [createAccountFail, setCreateAccountFail] = useState(false);
   const dispatch = useDispatch();
 
   const onChangeName = (e) => {
@@ -47,9 +49,14 @@ const CreateAccount = () => {
       .catch((e) => {
         console.log(e);
         setSuccessful(false);
+        setCreateAccountFail(true);
       });
     console.log(`Successful: ${successful}`);
   };
+
+  if (successful) {
+    return <Redirect to="/log-in" />;
+  }
 
   const validateEmails = (e) => {
     // Find the validation image div
@@ -87,7 +94,6 @@ const CreateAccount = () => {
       validationElement.style.display = 'block';
       validationElement.className = 'validation-success';
     }
-
   };
   //consolidate the two above functions
 
@@ -144,6 +150,18 @@ const CreateAccount = () => {
               required
             />
           </div>
+          {createAccountFail && (
+            <div className="generalError">
+              <HiOutlineExclamation /> Account already exists.{' '}
+              <HiOutlineExclamation />
+            </div>
+          )}
+          <div id="emailValidation" class="validation-image">
+            Email Match
+          </div>
+          <div id="passwordValidation" class="validation-image">
+            Password Match
+          </div>
           <Button
             contents={<div>Create Account</div>}
             styleClass="stdButton"
@@ -153,12 +171,6 @@ const CreateAccount = () => {
       </div>
       <div className="switchUserAccountAction">
         <Link to="./log-in">Already have an account?</Link>
-      </div>
-      <div id="emailValidation" class="validation-image">
-        Emails
-      </div>
-      <div id="passwordValidation" class="validation-image">
-        Passwords
       </div>
     </>
   );
