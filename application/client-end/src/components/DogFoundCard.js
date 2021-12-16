@@ -8,7 +8,7 @@ const DogFoundCard = ({ dogUploaded, dogObject, onClick }) => {
   // const dogBreed = "German Shepherd";
   //For testing, in implementation it'll be: dogObject.img
   // const dogImage = "https://www.akc.org/wp-content/uploads/2017/11/German-Shepherd-on-White-00.jpg";
-
+  console.log('inside of DogFoundCard', dogObject)
   return (
     <div>
       {dogObject.img && <img
@@ -22,11 +22,13 @@ const DogFoundCard = ({ dogUploaded, dogObject, onClick }) => {
         {dogUploaded.breedName}
       </p>
       {!dogObject.dogID && <DogNotSupported />}
-      <Link to="/doggydex" onClick={onClick}>
+      //<Link to="/doggydex" onClick={onClick}>
+      <Link to={{pathname:'/doginfo', state:{ dogs: dogObject}}} onClick={onClick}>
+
         <Button
           contents={
             <div>
-              Go to DoggyDex <FaArrowRight />
+              Go to Dog Info <FaArrowRight />
             </div>
           }
           styleClass="stdButton"

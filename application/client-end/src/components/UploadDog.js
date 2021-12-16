@@ -46,6 +46,7 @@ const UploadDog = () => {
         .put(`/api/basicuser/add/${userID}/${dogID}`)
         .then((res) => {
           console.log(res.msg);
+
         })
         .catch((err) => {
           console.log(err);
