@@ -3,7 +3,7 @@
 ## Created by:
 
 
-| Student Name 			| GitHub Username |
+| Developer Name 			| GitHub Username |
 |    :---:     			|     :---:       |
 | Orion Culbertson      | orionculbertson |
 | Miguel Galvan      	| mgacoder        |
