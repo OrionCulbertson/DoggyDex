@@ -5,8 +5,6 @@ import { Button, Logo } from '.';
 import { login } from '../actions/auth';
 import { HiOutlineExclamation } from 'react-icons/hi';
 
-import UserService from '../services/user.service';
-
 const LogIn = () => {
   const { isLoggedIn } = useSelector((state) => state.auth);
   const { message } = useSelector((state) => state.message);

@@ -24,36 +24,23 @@ const About = () => {
     let token = user.token;
    let decodedToken = jwt_decode(token);
    console.log('inside tester', decodedToken)
-//    let dogIDs = [];
-//    if(isLoggedIn){
-//        token = user.token;
-//        decodedToken = jwt_decode(token);
-//        console.log(decodedToken.dogbreedIDs);
-//        dogIDs = decodedToken.dogbreedIDs;
-//        console.log("this is dogIDS: ", dogIDs);
 
-//     }
 
     const check = () => {
-        // dispatch(setMessage("hello"))
-        // dispatch(setIsDogUploaded(!isDogUploaded));
-        // console.log(JSON.parse(localStorage.getItem("user")));
         axios.get("/api/dogbreed/").then(res => console.log(res.data)).catch(err => console.log(err));
     }
 
 
 
     const getUserDogs = () => {
-        // console.log(userDoggyDex);
-        // userService.getUserDoggyDex().then(res => console.log);
         userService.getUserDoggyDex().then(res => console.log(res));
         userService.dog();
     }
 
     const onSubmit = (e) => {
-        console.log('****** decodedToken inside onSubmit*****')
-        console.log(decodedToken.userId)
-        console.log('decodedToken inside onSubmit', decodedToken.userId)
+        // console.log('****** decodedToken inside onSubmit*****')
+        // console.log(decodedToken.userId)
+        // console.log('decodedToken inside onSubmit', decodedToken.userId)
         
         e.preventDefault();
         
@@ -87,7 +74,6 @@ const About = () => {
                 <div>
                     <form onSubmit={onSubmit}>
                         <div>
-                            {/* <input type="number" placeholder="user id" onChange={setUserid} /> */}
                             <input type="number" placeholder="dog breed id" onChange={(val) => {setDogid(val.target.value)}} />
                             <input type="submit" value="Add" />
                         </div>

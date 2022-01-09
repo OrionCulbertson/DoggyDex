@@ -18,26 +18,8 @@ const UploadDog = () => {
     dispatch(setIsDogUploaded(value));
   };
 
-  // useEffect(() => {
-  //   console.log('triggered', dogUploaded);
-  //   let mounted = true;
-  //   if (dogUploaded.breedName != null) {
-  //     if (mounted) {
-  //       // dispatch(setIsDogUploaded(true));
-  //     }
-  //   } else {
-  //     // if (mounted) {
-  //     //   console.log("NOT UPLOADED");
-  //       // dispatch(setIsDogUploaded(false));
-  //     // }
-  //   }
-  //   return () => {
-  //     mounted = false;
-  //   };
-  // }, [dogUploaded]);
-
   const addToUserDoggyDex = async (dogID) => {
-    // axios.post()
+
     try {
       const decodedToken = jwt_decode(user.token);
       const userID = decodedToken.userId;
