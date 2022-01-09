@@ -1,11 +1,4 @@
-import axios from "axios";
-import { useState } from "react";
 import { SET_USER_DOGGYDEX, CLEAR_USER_DOGGYDEX } from "../actions/types";
-import authHeader from "../services/auth-header";
-import UserService from "../services/user.service";
-// import { getUserDoggyDex} from "../services/user.service";
-// import UserService from userService
-
 
 const user = JSON.parse(localStorage.getItem("user"));
 
