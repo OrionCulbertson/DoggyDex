@@ -44,7 +44,7 @@
 
 # DoggyDex History
  I (Orion Culbertson) had the idea for this app in the Summer of 2021, and when I took my Software Engineering course at San Francisco State in the Fall, it ended up being a great opportunity and I got to work with the team of people below to get the app to where it is now.
----
+
 ## Created by:
 
 | Developer Name 			| GitHub Username |
