@@ -35,12 +35,12 @@
 
 # User Interface
 ## Home Screen and Menu
-<img src="https://user-images.githubusercontent.com/70170069/148695769-ef446c51-6d9b-4f0b-b028-5e587abc0768.png" alt="Home Screen" width="300"/> <img src="https://user-images.githubusercontent.com/70170069/148695794-c4d9e1d1-9926-4903-a309-3669451aae18.png" alt="Menu" width="300"/>
+<img src="https://user-images.githubusercontent.com/70170069/148695769-ef446c51-6d9b-4f0b-b028-5e587abc0768.png" alt="Home Screen" width="250"/> <img src="https://user-images.githubusercontent.com/70170069/148695794-c4d9e1d1-9926-4903-a309-3669451aae18.png" alt="Menu" width="250"/>
 ## DoggyDex Screens
-<img src="https://user-images.githubusercontent.com/70170069/148695851-47ae3ed6-ae7b-4b19-99c0-0d34ccf53d5c.png" alt="Learning Mode DoggyDex" width="300"/> <img src="https://user-images.githubusercontent.com/70170069/148695862-087d0c0a-9ac4-4f01-a40f-d59b15e2590a.png" alt="Personal DoggyDex" width="300"/> <img src="https://user-images.githubusercontent.com/70170069/148695865-6eb816c0-0dc8-4d94-a36e-0e3ebfd8ff11.png" alt="DoggDex Entry" width="300"/>
+<img src="https://user-images.githubusercontent.com/70170069/148695851-47ae3ed6-ae7b-4b19-99c0-0d34ccf53d5c.png" alt="Learning Mode DoggyDex" width="250"/> <img src="https://user-images.githubusercontent.com/70170069/148695862-087d0c0a-9ac4-4f01-a40f-d59b15e2590a.png" alt="Personal DoggyDex" width="250"/> <img src="https://user-images.githubusercontent.com/70170069/148695865-6eb816c0-0dc8-4d94-a36e-0e3ebfd8ff11.png" alt="DoggDex Entry" width="250"/>
 
 ## User Account Screens
-<img src="https://user-images.githubusercontent.com/70170069/148695813-278f298b-1354-4b16-8113-523966f4b5fb.png" alt="Logged Out User Profile" width="300"/> <img src="https://user-images.githubusercontent.com/70170069/148695815-2c7d0d6f-7e8c-41d8-965a-056fe122c44c.png" alt="Log In Screen" width="300"/> <img src="https://user-images.githubusercontent.com/70170069/148695821-0fa55caa-ad3d-4b4a-8fd2-48dc337c91ff.png" alt="Logged In User Profile" width="300"/> <img src="https://user-images.githubusercontent.com/70170069/148695828-861d2de0-e1e4-485a-9f59-9533bf74af79.png" alt="Create Account Screen" width="300"/>
+<img src="https://user-images.githubusercontent.com/70170069/148695813-278f298b-1354-4b16-8113-523966f4b5fb.png" alt="Logged Out User Profile" width="250"/> <img src="https://user-images.githubusercontent.com/70170069/148695815-2c7d0d6f-7e8c-41d8-965a-056fe122c44c.png" alt="Log In Screen" width="250"/> <img src="https://user-images.githubusercontent.com/70170069/148695821-0fa55caa-ad3d-4b4a-8fd2-48dc337c91ff.png" alt="Logged In User Profile" width="250"/> <img src="https://user-images.githubusercontent.com/70170069/148695828-861d2de0-e1e4-485a-9f59-9533bf74af79.png" alt="Create Account Screen" width="250"/>
 
 ---
 ## Created by:
