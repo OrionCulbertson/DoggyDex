@@ -4,7 +4,7 @@
 
   Have you ever been out on a walk and seen a really cool dog, but haven't known what breed it is to find out more information on it? DoggyDex aims to help solve this in a fun way! The goal with DoggyDex is to allow users to take a picture of a dog, have our ML classification system recognize it, and then present the user with information on that dog breed. This dog breed then gets logged in the user's DoggyDex, and the goal is for users to fill their DoggyDex with all of the different dogs that they can find.
  
-  DoggyDex is designed to be a mobile-oriented web app that allows users to easily take a picture of a dog in the moment and have it recognized.
+  DoggyDex is designed to be a mobile-oriented web app that allows users to easily take a picture of a dog in the moment and have it recognized. 
   
 # Current Features
  - Log In & Create Account systems
@@ -42,6 +42,8 @@
 ## User Account Screens
 <img src="https://user-images.githubusercontent.com/70170069/148695813-278f298b-1354-4b16-8113-523966f4b5fb.png" alt="Logged Out User Profile" width="250"/> <img src="https://user-images.githubusercontent.com/70170069/148695815-2c7d0d6f-7e8c-41d8-965a-056fe122c44c.png" alt="Log In Screen" width="250"/> <img src="https://user-images.githubusercontent.com/70170069/148695821-0fa55caa-ad3d-4b4a-8fd2-48dc337c91ff.png" alt="Logged In User Profile" width="250"/> <img src="https://user-images.githubusercontent.com/70170069/148695828-861d2de0-e1e4-485a-9f59-9533bf74af79.png" alt="Create Account Screen" width="250"/>
 
+# DoggyDex History
+ I (Orion Culbertson) had the idea for this app in the Summer of 2021, and when I took my Software Engineering course at San Francisco State in the Fall, it ended up being a great opportunity and I got to work with the team of people below to get the app to where it is now.
 ---
 ## Created by:
 
