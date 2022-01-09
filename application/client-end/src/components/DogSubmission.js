@@ -5,7 +5,6 @@ import axios from 'axios';
 import { HiOutlineExclamation } from 'react-icons/hi';
 import { DogResultLoading } from '.';
 import { useDispatch } from 'react-redux';
-// import { setIsDogUploaded } from '../actions/dogUploaded';
 
 
 const DogSubmission = ({ setDogUploaded, setIsDogUploaded, getDogInfo }) => {
@@ -38,17 +37,13 @@ const DogSubmission = ({ setDogUploaded, setIsDogUploaded, getDogInfo }) => {
         })
         .then(async (res) => {
           
-          // console.log(imgFile);
           const mlJSONResponse = res.data;
-          console.log(mlJSONResponse);
-          // mlJSONResponse.breedName;
-          // mlJSONResponse.humanPresent;
-          // mlJSONResponse.confidenceScore;
+          // console.log(mlJSONResponse);
         
           const breedName = mlJSONResponse.breedName;
           const confidenceScore = mlJSONResponse.confidenceScore;
-          // const breedName = mlJSONResponse.breedName;
-          // const confidenceScore = mlJSONResponse.confidenceScore;
+
+
           // const breedName = 'Labrador Retriever';
           // const confidenceScore = 20;
 
@@ -57,24 +52,13 @@ const DogSubmission = ({ setDogUploaded, setIsDogUploaded, getDogInfo }) => {
                         Get dog ID from returned dog breed
                         Get whole dog w/ getDogInfo
                         Log Breed ID in user's Doggydex
-                        Refresh loaded doggydex
+                        Refresh loaded doggydex -- still needs done
                     */
-          // FOR TESTING
-          // const {dog_id, confidenceScore } = res.data;
-          // const {dog_id, confidenceScore }
-          //const dog_id = 20;
-          //const confidenceScore = 90;
-          // console.log(dog_id);
-          // setUploadedFile({ fileName, filePath, dog_id }); // May not need this
-          // setMessage("File Uploaded");
+
           setDogUploaded({ breedName, confidenceScore });
           // setDogUploaded({dog_id: 10, confidenceScore: 90}); // Testing information
           await getDogInfo(breedName); // Loads dog object based off dog breed response
-          // setIsDogUploaded(true); // Updates the page
-          
-          // setFile({}); // Reset File Upload info
-          // setFileName(""); // Reset File Name info
-          // setImgFile('http://localhost:8080/api/image/id/' + res.data._id);
+
           console.log('done');
         });
 
