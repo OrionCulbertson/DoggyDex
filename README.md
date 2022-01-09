@@ -21,6 +21,7 @@
  - User dog breed list needs to be converted to Redux state storage
 
 # Future Features 
+ - Wider selection of dog breeds
  - Dog park finder
  - Gamification and scoring system
  - Dog photo feed
