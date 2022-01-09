@@ -4,7 +4,6 @@ import { Button, Logo } from './';
 import { Redirect } from 'react-router-dom';
 import { register } from '../actions/auth';
 import { useDispatch } from 'react-redux';
-import { FaTimesCircle } from 'react-icons/fa';
 import { HiOutlineExclamation } from 'react-icons/hi';
 
 const CreateAccount = () => {

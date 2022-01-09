@@ -1,16 +1,11 @@
 import { Link } from "react-router-dom"
 import Logo from "./Logo"
 import { useDispatch, useSelector } from "react-redux";
-import { setMessage } from "../actions/message";
-import { setIsDogUploaded } from "../actions/dogUploaded";
 import axios from "axios";
 import { useState } from "react";
-import authHeader from "../services/auth-header";
 import userService from "../services/user.service";
 import { setUserDoggydex } from "../actions/userDoggyDex";
-
 import jwt_decode from 'jwt-decode'
-import { register } from "../actions/auth";
 
 
 const Testing = () => {
@@ -18,11 +13,8 @@ const Testing = () => {
     const { message } = useSelector(state => state.message);
     const { isDogUploaded } = useSelector(state => state.dogUploaded);
     const [dogid, setDogid] = useState(-1);
-    // const [userid, setUserid] = useState(undefined);
     const dispatch = useDispatch();
-    // const { isDogUploaded: isDogUploaded } = useSelector((state) => state.isDogUploaded);
 
-    const { userDoggyDex } = useSelector(state => state.userDoggyDex);
     const check = () => {
         axios.get("/api/dogbreed/")
         .then(res => console.log(res.data))
@@ -30,8 +22,6 @@ const Testing = () => {
     }
 
     const getUserDogs = () => {
-        // console.log(userDoggyDex);
-        // userService.getUserDoggyDex().then(res => console.log);
         userService.getUserDoggyDex().then(res => {
             console.log(res);
             dispatch(setUserDoggydex(res));
@@ -73,7 +63,6 @@ const Testing = () => {
                 <div>
                     <form onSubmit={onSubmit}>
                         <div>
-                            {/* <input type="number" placeholder="user id" onChange={setUserid} /> */}
                             <input type="number" placeholder="dog breed id" onChange={(val) => { setDogid(val.target.value) }} />
                             <input type="submit" value="Add" />
                         </div>

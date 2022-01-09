@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import { Button, DogFoundCard } from '.';
 import { FaArrowLeft } from 'react-icons/fa';
 import { Link } from 'react-router-dom';

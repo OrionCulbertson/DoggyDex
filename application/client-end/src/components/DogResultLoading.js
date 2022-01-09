@@ -5,7 +5,7 @@ const DogResultLoading = () => {
     <div>
       <h2 className="bigText">Looking for dogs...</h2>
       <div className="loadingPaws">
-        <img className="loadingPaws" src={paws} alt='loading gif' />
+        <img className="loadingPaws" src={paws} alt="loading gif" />
       </div>
     </div>
   );

@@ -1,8 +1,3 @@
-import { Link } from 'react-router-dom';
-import Logo from './Logo';
-import { useDispatch, useSelector } from 'react-redux';
-import { setMessage } from '../actions/message';
-import { setIsDogUploaded } from '../actions/dogUploaded';
 import DevCard from './DevCard';
 import DoggDexTeam from '../resources/DoggyDexTeam.png';
 
