@@ -19,6 +19,7 @@
     - It can be built and ran locally though, following the instructions in the `DoggyDex/application` folder
  - Upon finding a new Dog Breed, logged in user's dog breeds aren't automatically updated
  - User dog breed list needs to be converted to Redux state storage
+ - Needs to be converted to an HTML5 secure website
 
 # Future Features 
  - Wider selection of dog breeds
@@ -27,6 +28,10 @@
  - Dog photo feed
  - Dog play date board
  - Lost dogs board
+
+# Software Stack
+ - ReactJS, ExpressJS, NodeJS, MongoDB
+ - Hosted with AWS EC2 and Nginx
 
 # User Interface
 ## Home Screen and Menu
